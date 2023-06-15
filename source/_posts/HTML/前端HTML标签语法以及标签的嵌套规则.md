@@ -6,7 +6,6 @@ tags:
 categories: 
   - 前端三剑客
 cover: ../articleImages/2.jpg
-feature: true
 ---
 <meta name="referrer" content="no-referrer"/>
 
