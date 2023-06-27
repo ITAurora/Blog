@@ -1,5 +1,5 @@
 ---
-title: 前端几个特殊CSS样式以及常见CSS样式补充
+title: 前端HTML中的hover选择器
 date: 2020-02-27 10:10:10
 tags:
   - HTML
