@@ -18,22 +18,22 @@
   
     <meta name="description" content="摘要">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端HTML中定位后的居中问题">
-<meta property="og:url" content="http://ultracode.cn/2020/03/06/HTML/%E5%89%8D%E7%AB%AFHTML%E4%B8%AD%E5%AE%9A%E4%BD%8D%E5%90%8E%E7%9A%84%E5%B1%85%E4%B8%AD%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:title" content="前端用媒体查询写一个响应式布局">
+<meta property="og:url" content="http://ultracode.cn/2020/03/10/HTML/%E5%89%8D%E7%AB%AF%E7%94%A8%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2%E5%86%99%E4%B8%80%E4%B8%AA%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/index.html">
 <meta property="og:site_name" content="Win">
 <meta property="og:description" content="摘要">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://ultracode.cn/articleImages/16.jpg">
-<meta property="article:published_time" content="2020-03-06T02:10:10.000Z">
-<meta property="article:modified_time" content="2023-07-22T01:38:48.073Z">
+<meta property="og:image" content="http://ultracode.cn/articleImages/7.jpg">
+<meta property="article:published_time" content="2020-03-10T02:12:10.000Z">
+<meta property="article:modified_time" content="2023-07-27T03:27:58.653Z">
 <meta property="article:author" content="Win">
 <meta property="article:tag" content="HTML">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://ultracode.cn/articleImages/16.jpg">
+<meta name="twitter:image" content="http://ultracode.cn/articleImages/7.jpg">
   
   
   
-  <title>前端HTML中定位后的居中问题 - Win</title>
+  <title>前端用媒体查询写一个响应式布局 - Win</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -211,7 +211,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="前端HTML中定位后的居中问题"></span>
+            <span id="subtitle" data-typed-text="前端用媒体查询写一个响应式布局"></span>
           
         </div>
 
@@ -222,8 +222,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2020-03-06 10:10" pubdate>
-          2020年3月6日 上午
+        <time datetime="2020-03-10 10:12" pubdate>
+          2020年3月10日 上午
         </time>
       </span>
     
@@ -234,7 +234,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          581 字
+          1.5k 字
         
       </span>
     
@@ -245,7 +245,7 @@
         
         
         
-          5 分钟
+          13 分钟
         
       </span>
     
@@ -283,15 +283,16 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">前端HTML中定位后的居中问题</h1>
+            <h1 style="display: none">前端用媒体查询写一个响应式布局</h1>
             
             
               <div class="markdown-body">
                 
                 <meta name="referrer" content="no-referrer"/>
 
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span>&gt;</span><span class="language-css"></span><br><span class="language-css">			<span class="hljs-selector-class">.root</span>&#123;</span><br><span class="language-css">				<span class="hljs-attribute">width</span>: <span class="hljs-number">600px</span>;</span><br><span class="language-css">				<span class="hljs-attribute">height</span>: <span class="hljs-number">600px</span>;</span><br><span class="language-css">				<span class="hljs-attribute">background-color</span>: blue;</span><br><span class="language-css">				<span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> auto;</span><br><span class="language-css">				<span class="hljs-attribute">position</span>: relative;</span><br><span class="language-css">			&#125;</span><br><span class="language-css">			<span class="hljs-selector-class">.one</span>&#123;</span><br><span class="language-css">				<span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;</span><br><span class="language-css">				<span class="hljs-attribute">height</span>: <span class="hljs-number">300px</span>;</span><br><span class="language-css">				<span class="hljs-attribute">background-color</span>: black;</span><br><span class="language-css">				<span class="hljs-attribute">position</span>: absolute;</span><br><span class="language-css">				<span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;</span><br><span class="language-css">				<span class="hljs-attribute">right</span>: <span class="hljs-number">0</span>;</span><br><span class="language-css">				<span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;</span><br><span class="language-css">				<span class="hljs-attribute">bottom</span>: <span class="hljs-number">0</span>;</span><br><span class="language-css">				<span class="hljs-attribute">margin</span>: auto;</span><br><span class="language-css">			&#125;	</span><br><span class="language-css">		</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;root&quot;</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;one&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>		<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br><br></code></pre></td></tr></table></figure>
-<p>运行结果：<br><img src="https://img-blog.csdnimg.cn/1c4846888a7a40a89bdba47e334c212a.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span>&gt;</span><span class="language-css"></span><br><span class="language-css">			*&#123;</span><br><span class="language-css">				<span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;</span><br><span class="language-css">				<span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;</span><br><span class="language-css">			&#125;</span><br><span class="language-css">			<span class="hljs-selector-class">.box</span>&#123;</span><br><span class="language-css">				<span class="hljs-attribute">width</span>: <span class="hljs-number">94%</span>;</span><br><span class="language-css">				<span class="hljs-attribute">border</span>: <span class="hljs-number">2px</span> solid blue;</span><br><span class="language-css">				<span class="hljs-attribute">margin</span>: <span class="hljs-number">20px</span> auto;</span><br><span class="language-css">			&#125;</span><br><span class="language-css">			</span><br><span class="language-css">			<span class="hljs-selector-class">.left</span>&#123;</span><br><span class="language-css">				<span class="hljs-attribute">width</span>: <span class="hljs-number">180px</span>;</span><br><span class="language-css">				<span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid pink;</span><br><span class="language-css">				<span class="hljs-attribute">padding</span>: <span class="hljs-number">20px</span> <span class="hljs-number">0</span>;</span><br><span class="language-css">				<span class="hljs-attribute">padding-left</span>: <span class="hljs-number">30px</span>;</span><br><span class="language-css">				<span class="hljs-attribute">float</span>: left;</span><br><span class="language-css">				</span><br><span class="language-css">			&#125;</span><br><span class="language-css">			<span class="hljs-comment">/*----*/</span></span><br><span class="language-css">			<span class="hljs-selector-class">.right</span>&#123;</span><br><span class="language-css">				<span class="hljs-attribute">margin-left</span>: <span class="hljs-number">212px</span>;</span><br><span class="language-css">			&#125;</span><br><span class="language-css">			<span class="hljs-selector-class">.right-top</span>, <span class="hljs-selector-class">.right-bottom</span>&#123;</span><br><span class="language-css">				<span class="hljs-attribute">padding</span>: <span class="hljs-number">20px</span> <span class="hljs-number">10px</span>;</span><br><span class="language-css">				<span class="hljs-attribute">border</span>:<span class="hljs-number">1px</span> solid green;</span><br><span class="language-css">			&#125;</span><br><span class="language-css">			</span><br><span class="language-css">			<span class="hljs-comment">/*-----*/</span></span><br><span class="language-css">			<span class="hljs-keyword">@media</span> <span class="hljs-keyword">only</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">max-width</span>: <span class="hljs-number">600px</span>) &#123;</span><br><span class="language-css">				<span class="hljs-selector-class">.left</span>&#123;</span><br><span class="language-css">					<span class="hljs-attribute">float</span>: none;</span><br><span class="language-css">					<span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;</span><br><span class="language-css">					<span class="hljs-attribute">box-sizing</span>: border-box;</span><br><span class="language-css">					<span class="hljs-attribute">overflow</span>: hidden;</span><br><span class="language-css">				&#125;</span><br><span class="language-css">				<span class="hljs-selector-class">.left</span> <span class="hljs-selector-tag">li</span>&#123;</span><br><span class="language-css">					<span class="hljs-attribute">float</span>: left;</span><br><span class="language-css">					<span class="hljs-attribute">margin-right</span>: <span class="hljs-number">10%</span>;</span><br><span class="language-css">				&#125;</span><br><span class="language-css">				<span class="hljs-selector-class">.right</span>&#123;</span><br><span class="language-css">					<span class="hljs-attribute">margin-left</span>: <span class="hljs-number">0px</span>;</span><br><span class="language-css">				&#125;</span><br><span class="language-css">			&#125;</span><br><span class="language-css">		</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;box&quot;</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;left&quot;</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>导航1<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>导航2<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>导航3<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>导航4<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>			<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br>			<br>			<span class="hljs-comment">&lt;!--右侧--&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;right&quot;</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;right-top&quot;</span>&gt;</span><br>					这是一个响应式布局练习..这是一个响应式布局练习..这是一个响应式布局练习..这是一个响应式布局练习..这是一个响应式布局练习..<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;right-bottom&quot;</span>&gt;</span><br>					这是一段打油文字..这是一段打油文字..这是一段打油文字..这是一段打油文字..这是一段打油文字..这是一段打油文字..这是一段打油文字..这是一段打油文字..这是一段打油文字..这是一段打油文字..这是一段打油文字..这是一段打油文字..这是一段打油文字..这是一段打油文字..这是一段打油文字..这是一段打油文字..这是一段打油文字..这是一段打油文字..<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>			<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>			<br>		<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>		<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br><br></code></pre></td></tr></table></figure>
+<p>这是全屏状态<br><img src="https://img-blog.csdnimg.cn/41f5c7e8a0a04dec8850d24e2d7d9da4.png" srcset="/img/loading.gif" lazyload><br>缩小窗口后<br><img src="https://img-blog.csdnimg.cn/4373dd3834b4485688816e5b77132a7c.png" srcset="/img/loading.gif" lazyload><br>继续缩小窗口</p>
+<p><img src="https://img-blog.csdnimg.cn/c87a8dadb23e4fe5ae2141e5f0d7a080.png" srcset="/img/loading.gif" lazyload></p>
 
                 
               </div>
@@ -337,8 +338,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>前端HTML中定位后的居中问题</div>
-      <div>http://ultracode.cn/2020/03/06/HTML/前端HTML中定位后的居中问题/</div>
+      <div>前端用媒体查询写一个响应式布局</div>
+      <div>http://ultracode.cn/2020/03/10/HTML/前端用媒体查询写一个响应式布局/</div>
     </div>
     <div class="license-meta">
       
@@ -350,7 +351,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2020年3月6日</div>
+          <div>2020年3月10日</div>
         </div>
       
       
@@ -382,18 +383,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/03/06/HTML/%E5%89%8D%E7%AB%AFHTML%E4%B8%AD%E5%A6%82%E4%BD%95%E5%81%9A%E5%87%BA%E4%B8%80%E4%B8%AA%E4%B8%89%E8%A7%92%E5%BD%A2/" title="前端HTML中如何做出一个三角形">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">前端HTML中如何做出一个三角形</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/03/05/HTML/%E5%89%8D%E7%AB%AFHTML%E4%B8%AD%E5%AE%9A%E4%BD%8D%E7%9A%84%E4%BD%BF%E7%94%A8/" title="前端HTML中定位的使用">
-                        <span class="hidden-mobile">前端HTML中定位的使用</span>
+                      <a href="/2020/03/10/HTML/%E5%89%8D%E7%AB%AFHTML%E4%B8%AD%E7%9A%84%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2/" title="前端HTML中的媒体查询">
+                        <span class="hidden-mobile">前端HTML中的媒体查询</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
