@@ -5,7 +5,8 @@ tags:
   - HTML
 categories:
   - 前端三剑客
-index_img: ../articleImages/6.png
+index_img: ../articleImages/6.jpg
+banner_img: ../articleImages/6.jpg
 excerpt: 摘要
 ---
 <meta name="referrer" content="no-referrer"/>
