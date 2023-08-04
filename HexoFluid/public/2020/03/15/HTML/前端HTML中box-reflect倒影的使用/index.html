@@ -18,22 +18,22 @@
   
     <meta name="description" content="摘要">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端HTML移动端适配">
-<meta property="og:url" content="http://ultracode.cn/2020/03/14/HTML/%E5%89%8D%E7%AB%AFHTML%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8D/index.html">
+<meta property="og:title" content="前端HTML中box-reflect倒影的使用">
+<meta property="og:url" content="http://ultracode.cn/2020/03/15/HTML/%E5%89%8D%E7%AB%AFHTML%E4%B8%ADbox-reflect%E5%80%92%E5%BD%B1%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="Win">
 <meta property="og:description" content="摘要">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://ultracode.cn/articleImages/2.jpg">
-<meta property="article:published_time" content="2020-03-14T04:10:10.000Z">
-<meta property="article:modified_time" content="2023-08-03T02:38:44.647Z">
+<meta property="og:image" content="http://ultracode.cn/articleImages/5.jpg">
+<meta property="article:published_time" content="2020-03-15T04:10:10.000Z">
+<meta property="article:modified_time" content="2023-08-04T06:06:45.493Z">
 <meta property="article:author" content="Win">
 <meta property="article:tag" content="HTML">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://ultracode.cn/articleImages/2.jpg">
+<meta name="twitter:image" content="http://ultracode.cn/articleImages/5.jpg">
   
   
   
-  <title>前端HTML移动端适配 - Win</title>
+  <title>前端HTML中box-reflect倒影的使用 - Win</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -205,13 +205,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/../articleImages/2.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/../articleImages/5.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="前端HTML移动端适配"></span>
+            <span id="subtitle" data-typed-text="前端HTML中box-reflect倒影的使用"></span>
           
         </div>
 
@@ -222,8 +222,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2020-03-14 12:10" pubdate>
-          2020年3月14日 中午
+        <time datetime="2020-03-15 12:10" pubdate>
+          2020年3月15日 中午
         </time>
       </span>
     
@@ -234,7 +234,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1k 字
+          704 字
         
       </span>
     
@@ -245,7 +245,7 @@
         
         
         
-          9 分钟
+          6 分钟
         
       </span>
     
@@ -283,16 +283,15 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">前端HTML移动端适配</h1>
+            <h1 style="display: none">前端HTML中box-reflect倒影的使用</h1>
             
             
               <div class="markdown-body">
                 
                 <meta name="referrer" content="no-referrer"/>
 
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span><br>		<span class="hljs-comment">&lt;!--移动端适配--&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no&quot;</span> /&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span>&gt;</span><span class="language-css"></span><br><span class="language-css">			*&#123;</span><br><span class="language-css">				<span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;</span><br><span class="language-css">				<span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;</span><br><span class="language-css">			&#125;</span><br><span class="language-css">			<span class="hljs-selector-tag">html</span>&#123;</span><br><span class="language-css">				<span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span></span><br><span class="language-css">			&#125;</span><br><span class="language-css">			<span class="hljs-selector-class">.one</span>&#123;</span><br><span class="language-css">				<span class="hljs-attribute">width</span>: <span class="hljs-number">19.68rem</span>;</span><br><span class="language-css">				<span class="hljs-attribute">height</span>: <span class="hljs-number">300px</span>;</span><br><span class="language-css">				<span class="hljs-attribute">background-color</span>: gold;</span><br><span class="language-css">				<span class="hljs-attribute">position</span>: absolute;</span><br><span class="language-css">				<span class="hljs-attribute">left</span>: <span class="hljs-number">30px</span>;</span><br><span class="language-css">				<span class="hljs-attribute">right</span>: <span class="hljs-number">30px</span>;</span><br><span class="language-css">			&#125;</span><br><span class="language-css">			<span class="hljs-keyword">@media</span> <span class="hljs-keyword">only</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">376px</span>) &#123;</span><br><span class="language-css">				<span class="hljs-selector-tag">html</span>&#123;</span><br><span class="language-css">				<span class="hljs-attribute">font-size</span>: <span class="hljs-number">17.98px</span></span><br><span class="language-css">			&#125;</span><br><span class="language-css">			&#125;</span><br><span class="language-css">			<span class="hljs-keyword">@media</span> <span class="hljs-keyword">only</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">820px</span>) &#123;</span><br><span class="language-css">				<span class="hljs-selector-tag">html</span>&#123;</span><br><span class="language-css">				<span class="hljs-attribute">font-size</span>: <span class="hljs-number">38.61px</span></span><br><span class="language-css">			&#125;</span><br><span class="language-css">			&#125;</span><br><span class="language-css">			<span class="hljs-selector-class">.two</span>&#123;</span><br><span class="language-css">				<span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;</span><br><span class="language-css">				<span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;</span><br><span class="language-css">				<span class="hljs-attribute">background-color</span>: yellow;</span><br><span class="language-css">			&#125;</span><br><span class="language-css">		</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;one&quot;</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;two&quot;</span>&gt;</span><br>			<br>			<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>		<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br><br></code></pre></td></tr></table></figure>
-<p>运行结果：<br>窗口375的iPhone e上运行<br><img src="https://img-blog.csdnimg.cn/1337d035b6934efba790386562925528.png" srcset="/img/loading.gif" lazyload><br>窗口414的iphone xr上运行<br><img src="https://img-blog.csdnimg.cn/e44fc8e2d37a4c4197ba16a761e03228.png" srcset="/img/loading.gif" lazyload><br>在iPad air上运行<br><img src="https://img-blog.csdnimg.cn/abf906e36d98470bb53969b59e81d6ac.png" srcset="/img/loading.gif" lazyload></p>
-<p>在不同设备上裕兴始终离左右边各30px</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>倒影<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span>&gt;</span><span class="language-css"></span><br><span class="language-css">			<span class="hljs-comment">/*倒影只是一个影像 不占据空间*/</span></span><br><span class="language-css">			<span class="hljs-comment">/*1.倒影的位置</span></span><br><span class="hljs-comment"><span class="language-css">			 left 在实物的左侧 right 在右侧</span></span><br><span class="hljs-comment"><span class="language-css">			 above 在标签上方 below 在标签下方</span></span><br><span class="hljs-comment"><span class="language-css">			 2.距离实物的距离 单位px*/</span></span><br><span class="language-css">			<span class="hljs-selector-class">.bottom</span>&#123;</span><br><span class="language-css">			<span class="hljs-comment">/*盒子不写宽时默认与父级同宽高度由内容撑起*/</span></span><br><span class="language-css">				<span class="hljs-attribute">width</span>: <span class="hljs-number">600px</span>;</span><br><span class="language-css">				<span class="hljs-comment">/*普通写法*/</span></span><br><span class="language-css">				<span class="hljs-comment">/*-webkit-box-reflect: below 10px;*/</span></span><br><span class="language-css">				<span class="hljs-comment">/*越来越越透明的写法 就是渐变倒影*/</span></span><br><span class="language-css">				-webkit-box-reflect:below -<span class="hljs-number">300px</span></span><br><span class="language-css">				<span class="hljs-built_in">-webkit-linear-gradient</span>(<span class="hljs-comment">/*left*/</span>top,transparent,red);</span><br><span class="language-css">			&#125;</span><br><span class="language-css">			<span class="hljs-selector-class">.bottom</span> <span class="hljs-selector-tag">img</span>&#123;</span><br><span class="language-css">				<span class="hljs-attribute">width</span>: <span class="hljs-number">600px</span>;</span><br><span class="language-css">			&#125;</span><br><span class="language-css">		</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>下倒影<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;bottom&quot;</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;img/heart.png&quot;</span>/&gt;</span><br>		<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br><br></code></pre></td></tr></table></figure>
+<p>运行结果：<br><img src="https://img-blog.csdnimg.cn/14cbc279349f4c79b50ad3b9a66701a8.png" srcset="/img/loading.gif" lazyload></p>
 
                 
               </div>
@@ -338,8 +337,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>前端HTML移动端适配</div>
-      <div>http://ultracode.cn/2020/03/14/HTML/前端HTML移动端适配/</div>
+      <div>前端HTML中box-reflect倒影的使用</div>
+      <div>http://ultracode.cn/2020/03/15/HTML/前端HTML中box-reflect倒影的使用/</div>
     </div>
     <div class="license-meta">
       
@@ -351,7 +350,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2020年3月14日</div>
+          <div>2020年3月15日</div>
         </div>
       
       
@@ -383,18 +382,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/03/15/HTML/%E5%89%8D%E7%AB%AFHTML%E5%BC%B9%E6%80%A7%E5%B8%83%E5%B1%80display%EF%BC%9Aflex%E7%9A%84%E4%BD%BF%E7%94%A8/" title="前端HTML弹性布局display：flex的使用">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">前端HTML弹性布局display：flex的使用</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/03/14/HTML/%E5%89%8D%E7%AB%AFHTML%E4%B8%ADvm%E5%92%8Cvh%E5%8D%95%E4%BD%8D%E7%9A%84%E4%BD%BF%E7%94%A8/" title="前端HTML中vm和vh单位的使用">
-                        <span class="hidden-mobile">前端HTML中vm和vh单位的使用</span>
+                      <a href="/2020/03/15/HTML/%E5%89%8D%E7%AB%AFHTML%E5%A4%9A%E5%88%97%E5%B8%83%E5%B1%80columns%E7%9A%84%E4%BD%BF%E7%94%A8/" title="前端HTML多列布局columns的使用">
+                        <span class="hidden-mobile">前端HTML多列布局columns的使用</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

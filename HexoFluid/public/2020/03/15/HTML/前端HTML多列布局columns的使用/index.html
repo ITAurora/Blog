@@ -18,22 +18,22 @@
   
     <meta name="description" content="摘要">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端HTML移动端适配">
-<meta property="og:url" content="http://ultracode.cn/2020/03/14/HTML/%E5%89%8D%E7%AB%AFHTML%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8D/index.html">
+<meta property="og:title" content="前端HTML多列布局columns的使用">
+<meta property="og:url" content="http://ultracode.cn/2020/03/15/HTML/%E5%89%8D%E7%AB%AFHTML%E5%A4%9A%E5%88%97%E5%B8%83%E5%B1%80columns%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="Win">
 <meta property="og:description" content="摘要">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://ultracode.cn/articleImages/2.jpg">
-<meta property="article:published_time" content="2020-03-14T04:10:10.000Z">
-<meta property="article:modified_time" content="2023-08-03T02:38:44.647Z">
+<meta property="og:image" content="http://ultracode.cn/articleImages/4.jpg">
+<meta property="article:published_time" content="2020-03-15T03:10:10.000Z">
+<meta property="article:modified_time" content="2023-08-04T06:05:34.353Z">
 <meta property="article:author" content="Win">
 <meta property="article:tag" content="HTML">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://ultracode.cn/articleImages/2.jpg">
+<meta name="twitter:image" content="http://ultracode.cn/articleImages/4.jpg">
   
   
   
-  <title>前端HTML移动端适配 - Win</title>
+  <title>前端HTML多列布局columns的使用 - Win</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -205,13 +205,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/../articleImages/2.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/../articleImages/4.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="前端HTML移动端适配"></span>
+            <span id="subtitle" data-typed-text="前端HTML多列布局columns的使用"></span>
           
         </div>
 
@@ -222,8 +222,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2020-03-14 12:10" pubdate>
-          2020年3月14日 中午
+        <time datetime="2020-03-15 11:10" pubdate>
+          2020年3月15日 上午
         </time>
       </span>
     
@@ -234,7 +234,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1k 字
+          2.2k 字
         
       </span>
     
@@ -245,7 +245,7 @@
         
         
         
-          9 分钟
+          19 分钟
         
       </span>
     
@@ -283,16 +283,16 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">前端HTML移动端适配</h1>
+            <h1 style="display: none">前端HTML多列布局columns的使用</h1>
             
             
               <div class="markdown-body">
                 
                 <meta name="referrer" content="no-referrer"/>
 
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span><br>		<span class="hljs-comment">&lt;!--移动端适配--&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no&quot;</span> /&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span>&gt;</span><span class="language-css"></span><br><span class="language-css">			*&#123;</span><br><span class="language-css">				<span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;</span><br><span class="language-css">				<span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;</span><br><span class="language-css">			&#125;</span><br><span class="language-css">			<span class="hljs-selector-tag">html</span>&#123;</span><br><span class="language-css">				<span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span></span><br><span class="language-css">			&#125;</span><br><span class="language-css">			<span class="hljs-selector-class">.one</span>&#123;</span><br><span class="language-css">				<span class="hljs-attribute">width</span>: <span class="hljs-number">19.68rem</span>;</span><br><span class="language-css">				<span class="hljs-attribute">height</span>: <span class="hljs-number">300px</span>;</span><br><span class="language-css">				<span class="hljs-attribute">background-color</span>: gold;</span><br><span class="language-css">				<span class="hljs-attribute">position</span>: absolute;</span><br><span class="language-css">				<span class="hljs-attribute">left</span>: <span class="hljs-number">30px</span>;</span><br><span class="language-css">				<span class="hljs-attribute">right</span>: <span class="hljs-number">30px</span>;</span><br><span class="language-css">			&#125;</span><br><span class="language-css">			<span class="hljs-keyword">@media</span> <span class="hljs-keyword">only</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">376px</span>) &#123;</span><br><span class="language-css">				<span class="hljs-selector-tag">html</span>&#123;</span><br><span class="language-css">				<span class="hljs-attribute">font-size</span>: <span class="hljs-number">17.98px</span></span><br><span class="language-css">			&#125;</span><br><span class="language-css">			&#125;</span><br><span class="language-css">			<span class="hljs-keyword">@media</span> <span class="hljs-keyword">only</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">820px</span>) &#123;</span><br><span class="language-css">				<span class="hljs-selector-tag">html</span>&#123;</span><br><span class="language-css">				<span class="hljs-attribute">font-size</span>: <span class="hljs-number">38.61px</span></span><br><span class="language-css">			&#125;</span><br><span class="language-css">			&#125;</span><br><span class="language-css">			<span class="hljs-selector-class">.two</span>&#123;</span><br><span class="language-css">				<span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;</span><br><span class="language-css">				<span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;</span><br><span class="language-css">				<span class="hljs-attribute">background-color</span>: yellow;</span><br><span class="language-css">			&#125;</span><br><span class="language-css">		</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;one&quot;</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;two&quot;</span>&gt;</span><br>			<br>			<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>		<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br><br></code></pre></td></tr></table></figure>
-<p>运行结果：<br>窗口375的iPhone e上运行<br><img src="https://img-blog.csdnimg.cn/1337d035b6934efba790386562925528.png" srcset="/img/loading.gif" lazyload><br>窗口414的iphone xr上运行<br><img src="https://img-blog.csdnimg.cn/e44fc8e2d37a4c4197ba16a761e03228.png" srcset="/img/loading.gif" lazyload><br>在iPad air上运行<br><img src="https://img-blog.csdnimg.cn/abf906e36d98470bb53969b59e81d6ac.png" srcset="/img/loading.gif" lazyload></p>
-<p>在不同设备上裕兴始终离左右边各30px</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span>&gt;</span><span class="language-css"></span><br><span class="language-css">			*&#123;</span><br><span class="language-css">				<span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;</span><br><span class="language-css">				<span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;</span><br><span class="language-css">			&#125;</span><br><span class="language-css">			<span class="hljs-selector-class">.one</span>&#123;</span><br><span class="language-css">				<span class="hljs-attribute">width</span>: <span class="hljs-number">1100px</span>;</span><br><span class="language-css">				<span class="hljs-attribute">border</span>: dashed <span class="hljs-number">3px</span> red;</span><br><span class="language-css">				<span class="hljs-attribute">margin</span>: <span class="hljs-number">30px</span> auto;</span><br><span class="language-css">				<span class="hljs-comment">/*column</span></span><br><span class="hljs-comment"><span class="language-css">				 1.column-count 最大列数</span></span><br><span class="hljs-comment"><span class="language-css">				 2.column-width 最小列宽度</span></span><br><span class="hljs-comment"><span class="language-css">				 3.columns 上面两种样式的综合写法</span></span><br><span class="hljs-comment"><span class="language-css">				 4.column-gap 列与列之间的距离</span></span><br><span class="hljs-comment"><span class="language-css">				 5.column-rule 分割线的样式 写法参考border即可</span></span><br><span class="hljs-comment"><span class="language-css">				 6.column-span 设置跨列显示</span></span><br><span class="hljs-comment"><span class="language-css">				 */</span></span><br><span class="language-css">				<span class="hljs-comment">/*column-count: 5;</span></span><br><span class="hljs-comment"><span class="language-css">				column-width: 200px;*/</span></span><br><span class="language-css">				<span class="hljs-comment">/*以上综合写法*/</span></span><br><span class="language-css">				<span class="hljs-attribute">columns</span>: <span class="hljs-number">5</span> <span class="hljs-number">250px</span>;</span><br><span class="language-css">				<span class="hljs-attribute">column-gap</span>: <span class="hljs-number">100px</span>;</span><br><span class="language-css">				<span class="hljs-attribute">column-rule</span>: yellow solid <span class="hljs-number">3px</span>;</span><br><span class="language-css">			&#125;</span><br><span class="language-css">			<span class="hljs-selector-tag">h1</span>&#123;</span><br><span class="language-css">				<span class="hljs-attribute">column-span</span>: all;</span><br><span class="language-css">			&#125;</span><br><span class="language-css">			<span class="hljs-selector-tag">p</span>&#123;</span><br><span class="language-css">				<span class="hljs-attribute">text-indent</span>: <span class="hljs-number">2em</span>;</span><br><span class="language-css">			&#125;</span><br><span class="language-css">		</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;one&quot;</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>唯物辩证法都包括什么内容<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>考点1普遍联系<br><br>1.联系具有普遍性。它主要表现在：第一，任何事物内部的各个部分、要素是相互联系的;第二，任何事物都与周围的其他事物相互联系着;第三，整个世界是一个相互联系的统一整体。总之，世界上的一切事物都处在普遍联系之中，其中没有任何一个事物孤立地存在，整个世界就是一个普遍联系的统一整体。普遍联系是事物存在和发展的基本条件。(注意：不能把联系的普遍性理解为世界上任何事物和任何事物联系着，每一事物与其他事物的联系是具体的，有条件的，相对的，在不同时间、地点、环境条件下，事物的联系是不同的。)<br><br>2.联系具有客观性。它是事物本身所固有的，不以人的意志为转移的。人们既不能否定事物联系，也不能把主观联系强加给事物。但是，人们可以根据事物的固有联系改变事物的状态，建立新的具体联系。(注意：新的具体联系的建立，需要一定的条件，没有一定的客观条件，联系就建立不起来;任何联系的建立，必须符合事物固有的规律，违背了客观规律，也建立不起联系。新的具体联系的建立，只是改变了事物联系的具体形式，并没有根本改变事物本身的固有的联系。)<br><br>3.坚持用联系的观点看问题：从客观事物本身的真实联系出发，全面把握事物的联系。既要防止孤立地看问题的形而上学，又要反对主观臆造的联系。在事物的变化发展中把握联系。<br><br>考点2因果联系<br><br>1.因果联系的特点：任何现象都会引起其他现象的产生，任何现象的产生都是由其他现象所引起的。这种引起和被引起的关系，叫做因果联系。事物之间的因果联系，必须既是先行后续的关系，又是引起和被引起的关系。<br><br>2.原因和结果的关系：(1)在每一事物的具体因果联系中，原因和结果有严格的区别。如果混淆二者，就会发生倒因为果、倒果为因的错误。(2)因果和结果相互依存，在客观世界中，原因总是伴随一定的结果，结果必然由一定原因引起。世界上没有无因之果，也没有无果之因。(3)原因和结果在一定条件下可以相互转化，这种转化有两种情形。一种情形是，事物的联系和发展是一个无限的链条。某一现象在这种关系中是原因，在另一关系中则是结果;反之亦然。另一种情形是，在同一关系中，两种现象互为因果。<br><br>3.认识和掌握因果联系的方法论意义：①承认因果联系的普遍性和客观性，是人们正确认识事物，进行科学研究的前提。②正确把握事物的因果联系，才能提高人们活动的自觉性和预见性。<br><br>考点3整体与部分(系统与要素)的联系<br><br>1.整体与部分的区别：①内涵不同。不应把事物及其过程与构成它的部分等同起来。②地位与功能不同。整体居于主导地位，统率着部分;整体具有部分根本没有的功能。当部分以合理的结构形成整体时，整体就具有全新的功能，整体的功能就会大于各个部分功能之和。当部分以欠佳的结构形成整体时，就会损害整体功能的发挥。<br><br>2.整体与部分的联系：①二者不可分割。整体由部分构成，整体功能的形成离不开部分原有的功能。部分是整体中的部分，部分离开整体就不再具有部分的功能。②二者相互影响，整体的性能状态及其变化会影响到部分的性能状态及其变化。反之，部分也制约着整体，甚至在一定条件下，关键部分的性能会对整体的性能状态起决定作用。③整体和部分的地位在一定条件下是可以转化的。<br><br>3.方法论意义：①要树立全局观念，办事情要从整体着眼，寻求最优目标。②搞好局部，使整体功能得到最大发挥。<br><br><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br>		<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br><br></code></pre></td></tr></table></figure>
+<p>运行结果:</p>
+<p><img src="https://img-blog.csdnimg.cn/31f60a6db1db441d83ab8cfaff5cc87c.png" srcset="/img/loading.gif" lazyload></p>
 
                 
               </div>
@@ -338,8 +338,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>前端HTML移动端适配</div>
-      <div>http://ultracode.cn/2020/03/14/HTML/前端HTML移动端适配/</div>
+      <div>前端HTML多列布局columns的使用</div>
+      <div>http://ultracode.cn/2020/03/15/HTML/前端HTML多列布局columns的使用/</div>
     </div>
     <div class="license-meta">
       
@@ -351,7 +351,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2020年3月14日</div>
+          <div>2020年3月15日</div>
         </div>
       
       
@@ -383,9 +383,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/03/15/HTML/%E5%89%8D%E7%AB%AFHTML%E5%BC%B9%E6%80%A7%E5%B8%83%E5%B1%80display%EF%BC%9Aflex%E7%9A%84%E4%BD%BF%E7%94%A8/" title="前端HTML弹性布局display：flex的使用">
+                      <a href="/2020/03/15/HTML/%E5%89%8D%E7%AB%AFHTML%E4%B8%ADbox-reflect%E5%80%92%E5%BD%B1%E7%9A%84%E4%BD%BF%E7%94%A8/" title="前端HTML中box-reflect倒影的使用">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">前端HTML弹性布局display：flex的使用</span>
+                        <span class="hidden-mobile">前端HTML中box-reflect倒影的使用</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -393,8 +393,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/03/14/HTML/%E5%89%8D%E7%AB%AFHTML%E4%B8%ADvm%E5%92%8Cvh%E5%8D%95%E4%BD%8D%E7%9A%84%E4%BD%BF%E7%94%A8/" title="前端HTML中vm和vh单位的使用">
-                        <span class="hidden-mobile">前端HTML中vm和vh单位的使用</span>
+                      <a href="/2020/03/15/HTML/%E5%89%8D%E7%AB%AFHTML%E5%BC%B9%E6%80%A7%E5%B8%83%E5%B1%80display%EF%BC%9Aflex%E7%9A%84%E4%BD%BF%E7%94%A8/" title="前端HTML弹性布局display：flex的使用">
+                        <span class="hidden-mobile">前端HTML弹性布局display：flex的使用</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
