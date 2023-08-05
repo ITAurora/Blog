@@ -18,22 +18,22 @@
   
     <meta name="description" content="摘要">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端HTML中box-reflect倒影的使用">
-<meta property="og:url" content="http://ultracode.cn/2020/03/15/HTML/%E5%89%8D%E7%AB%AFHTML%E4%B8%ADbox-reflect%E5%80%92%E5%BD%B1%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:title" content="前端js语法基础">
+<meta property="og:url" content="http://ultracode.cn/2020/03/20/JS/%E5%89%8D%E7%AB%AFjs%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Win">
 <meta property="og:description" content="摘要">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://ultracode.cn/articleImages/5.jpg">
-<meta property="article:published_time" content="2020-03-15T04:10:10.000Z">
-<meta property="article:modified_time" content="2023-08-04T06:06:45.493Z">
+<meta property="og:image" content="http://ultracode.cn/articleImages/6.jpg">
+<meta property="article:published_time" content="2020-03-20T02:10:10.000Z">
+<meta property="article:modified_time" content="2023-08-05T07:23:57.314Z">
 <meta property="article:author" content="Win">
-<meta property="article:tag" content="HTML">
+<meta property="article:tag" content="JS">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://ultracode.cn/articleImages/5.jpg">
+<meta name="twitter:image" content="http://ultracode.cn/articleImages/6.jpg">
   
   
   
-  <title>前端HTML中box-reflect倒影的使用 - Win</title>
+  <title>前端js语法基础 - Win</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -205,13 +205,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/../articleImages/5.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/../articleImages/6.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="前端HTML中box-reflect倒影的使用"></span>
+            <span id="subtitle" data-typed-text="前端js语法基础"></span>
           
         </div>
 
@@ -222,8 +222,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2020-03-15 12:10" pubdate>
-          2020年3月15日 中午
+        <time datetime="2020-03-20 10:10" pubdate>
+          2020年3月20日 上午
         </time>
       </span>
     
@@ -234,7 +234,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          704 字
+          730 字
         
       </span>
     
@@ -245,7 +245,7 @@
         
         
         
-          6 分钟
+          7 分钟
         
       </span>
     
@@ -283,15 +283,15 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">前端HTML中box-reflect倒影的使用</h1>
+            <h1 style="display: none">前端js语法基础</h1>
             
             
               <div class="markdown-body">
                 
                 <meta name="referrer" content="no-referrer"/>
 
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>倒影<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span>&gt;</span><span class="language-css"></span><br><span class="language-css">			<span class="hljs-comment">/*倒影只是一个影像 不占据空间*/</span></span><br><span class="language-css">			<span class="hljs-comment">/*1.倒影的位置</span></span><br><span class="hljs-comment"><span class="language-css">			 left 在实物的左侧 right 在右侧</span></span><br><span class="hljs-comment"><span class="language-css">			 above 在标签上方 below 在标签下方</span></span><br><span class="hljs-comment"><span class="language-css">			 2.距离实物的距离 单位px*/</span></span><br><span class="language-css">			<span class="hljs-selector-class">.bottom</span>&#123;</span><br><span class="language-css">			<span class="hljs-comment">/*盒子不写宽时默认与父级同宽高度由内容撑起*/</span></span><br><span class="language-css">				<span class="hljs-attribute">width</span>: <span class="hljs-number">600px</span>;</span><br><span class="language-css">				<span class="hljs-comment">/*普通写法*/</span></span><br><span class="language-css">				<span class="hljs-comment">/*-webkit-box-reflect: below 10px;*/</span></span><br><span class="language-css">				<span class="hljs-comment">/*越来越越透明的写法 就是渐变倒影*/</span></span><br><span class="language-css">				-webkit-box-reflect:below -<span class="hljs-number">300px</span></span><br><span class="language-css">				<span class="hljs-built_in">-webkit-linear-gradient</span>(<span class="hljs-comment">/*left*/</span>top,transparent,red);</span><br><span class="language-css">			&#125;</span><br><span class="language-css">			<span class="hljs-selector-class">.bottom</span> <span class="hljs-selector-tag">img</span>&#123;</span><br><span class="language-css">				<span class="hljs-attribute">width</span>: <span class="hljs-number">600px</span>;</span><br><span class="language-css">			&#125;</span><br><span class="language-css">		</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>下倒影<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;bottom&quot;</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;img/heart.png&quot;</span>/&gt;</span><br>		<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br><br></code></pre></td></tr></table></figure>
-<p>运行结果：<br><img src="https://img-blog.csdnimg.cn/14cbc279349f4c79b50ad3b9a66701a8.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs js">&lt;!<span class="hljs-variable constant_">DOCTYPE</span> html&gt;<br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span></span><br><span class="language-xml">	<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span></span><br><span class="language-xml">		<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span> /&gt;</span></span><br><span class="language-xml">		<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span></span><br><span class="language-xml">	<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></span><br><span class="language-xml">	<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span><br><span class="language-xml">		<span class="hljs-comment">&lt;!--行间引入js  不推荐  知道即可--&gt;</span></span><br><span class="language-xml">		<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;javascript:alert(&#x27;今天是星期一!&#x27;)&quot;</span>&gt;</span>点击弹出提示框<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></span><br><span class="language-xml">		</span><br><span class="language-xml">	<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span><br><br>&lt;!--内部引入 --&gt;<br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="language-javascript"><span class="language-xml">			<span class="hljs-comment">//在此处编译js代码即可!!</span></span></span><br><span class="language-javascript"><span class="language-xml">			<span class="hljs-comment">//变量  标识符var</span></span></span><br><span class="language-javascript"><span class="language-xml">			<span class="hljs-keyword">var</span> a = <span class="hljs-string">&quot;哈哈&quot;</span>;</span></span><br><span class="language-javascript"><span class="language-xml">			<span class="hljs-comment">//console控制台  log输出</span></span></span><br><span class="language-javascript"><span class="language-xml">			<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(a);</span></span><br><span class="language-javascript"><span class="language-xml">			<span class="hljs-comment">//弹框</span></span></span><br><span class="language-javascript"><span class="language-xml">			<span class="hljs-title function_">alert</span>(<span class="hljs-string">&quot;你看这是弹框!&quot;</span>);</span></span><br><span class="language-javascript"><span class="language-xml">			</span></span><br><span class="language-javascript"><span class="language-xml"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><br>&lt;!--外部引入--&gt;<br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;js/main.js&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="language-javascript"><span class="language-xml">	<span class="hljs-comment">//注意!此处虽然是双标签,但是不可以写任何代码!写了也不会执行!</span></span></span><br><span class="language-javascript"><span class="language-xml">	<span class="hljs-comment">//不信你看!</span></span></span><br><span class="language-javascript"><span class="language-xml">	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;我非要写,我就想看看这行输出走不走!!&quot;</span>);</span></span><br><span class="language-javascript"><span class="language-xml">		</span></span><br><span class="language-javascript"><span class="language-xml">		</span></span><br><span class="language-javascript"><span class="language-xml"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><br></code></pre></td></tr></table></figure>
+<p>运行结果:<br><img src="https://img-blog.csdnimg.cn/e8375e25242647698045b9a22d50b7f5.png" srcset="/img/loading.gif" lazyload><br><img src="https://img-blog.csdnimg.cn/54ecd3b5db1c4a88a67caa8d78fe4628.png" srcset="/img/loading.gif" lazyload><br><img src="https://img-blog.csdnimg.cn/7568760d49534cefb02c8d8c2d1488a5.png" srcset="/img/loading.gif" lazyload></p>
 
                 
               </div>
@@ -325,7 +325,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/HTML/">#HTML</a>
+        <a href="/tags/JS/">#JS</a>
       
     </div>
   
@@ -337,8 +337,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>前端HTML中box-reflect倒影的使用</div>
-      <div>http://ultracode.cn/2020/03/15/HTML/前端HTML中box-reflect倒影的使用/</div>
+      <div>前端js语法基础</div>
+      <div>http://ultracode.cn/2020/03/20/JS/前端js语法基础/</div>
     </div>
     <div class="license-meta">
       
@@ -350,7 +350,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2020年3月15日</div>
+          <div>2020年3月20日</div>
         </div>
       
       
@@ -382,9 +382,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/03/20/JS/%E5%89%8D%E7%AB%AFjs%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/" title="前端js语法基础">
+                      <a href="/2020/03/20/JS/%E5%89%8D%E7%AB%AFjs%E5%8F%98%E9%87%8F/" title="前端js变量">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">前端js语法基础</span>
+                        <span class="hidden-mobile">前端js变量</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -392,8 +392,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/03/15/HTML/%E5%89%8D%E7%AB%AFHTML%E5%A4%9A%E5%88%97%E5%B8%83%E5%B1%80columns%E7%9A%84%E4%BD%BF%E7%94%A8/" title="前端HTML多列布局columns的使用">
-                        <span class="hidden-mobile">前端HTML多列布局columns的使用</span>
+                      <a href="/2020/03/15/HTML/%E5%89%8D%E7%AB%AFHTML%E4%B8%ADbox-reflect%E5%80%92%E5%BD%B1%E7%9A%84%E4%BD%BF%E7%94%A8/" title="前端HTML中box-reflect倒影的使用">
+                        <span class="hidden-mobile">前端HTML中box-reflect倒影的使用</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
