@@ -1,6 +1,6 @@
 ---
 title: 前端js语法基础
-date: 2020-03-20 10:10:10
+date: 2020-11-02 10:10:10
 tags:
   - JS
 categories:
