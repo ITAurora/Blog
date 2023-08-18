@@ -18,22 +18,22 @@
   
     <meta name="description" content="摘要">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端js中Date的使用">
-<meta property="og:url" content="http://ultracode.cn/2020/11/12/JS/%E5%89%8D%E7%AB%AFjs%E4%B8%ADDate%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:title" content="前端js实现京东轮播图">
+<meta property="og:url" content="http://ultracode.cn/2020/11/13/JS/%E5%89%8D%E7%AB%AFjs%E5%AE%9E%E7%8E%B0%E4%BA%AC%E4%B8%9C%E8%BD%AE%E6%92%AD%E5%9B%BE/index.html">
 <meta property="og:site_name" content="Win">
 <meta property="og:description" content="摘要">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://ultracode.cn/articleImages/10.jpg">
-<meta property="article:published_time" content="2020-11-12T03:10:10.000Z">
-<meta property="article:modified_time" content="2023-08-17T09:37:13.946Z">
+<meta property="og:image" content="http://ultracode.cn/articleImages/12.jpg">
+<meta property="article:published_time" content="2020-11-13T03:10:10.000Z">
+<meta property="article:modified_time" content="2023-08-18T13:51:24.090Z">
 <meta property="article:author" content="Win">
 <meta property="article:tag" content="JS">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://ultracode.cn/articleImages/10.jpg">
+<meta name="twitter:image" content="http://ultracode.cn/articleImages/12.jpg">
   
   
   
-  <title>前端js中Date的使用 - Win</title>
+  <title>前端js实现京东轮播图 - Win</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -205,13 +205,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/../articleImages/10.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/../articleImages/12.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="前端js中Date的使用"></span>
+            <span id="subtitle" data-typed-text="前端js实现京东轮播图"></span>
           
         </div>
 
@@ -222,8 +222,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2020-11-12 11:10" pubdate>
-          2020年11月12日 上午
+        <time datetime="2020-11-13 11:10" pubdate>
+          2020年11月13日 上午
         </time>
       </span>
     
@@ -234,7 +234,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.6k 字
+          1.1k 字
         
       </span>
     
@@ -245,7 +245,7 @@
         
         
         
-          14 分钟
+          10 分钟
         
       </span>
     
@@ -283,15 +283,15 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">前端js中Date的使用</h1>
+            <h1 style="display: none">前端js实现京东轮播图</h1>
             
             
               <div class="markdown-body">
                 
                 <meta name="referrer" content="no-referrer"/>
 
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript">	<span class="hljs-comment">//Date日期类</span></span><br><span class="language-javascript">	<span class="hljs-comment">//获取当前日期</span></span><br><span class="language-javascript">	<span class="hljs-keyword">var</span> date =<span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>();</span><br><span class="language-javascript">	<span class="hljs-comment">//获取年</span></span><br><span class="language-javascript">	<span class="hljs-keyword">var</span> year=date.<span class="hljs-title function_">getFullYear</span>();</span><br><span class="language-javascript">	<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">write</span>(year+<span class="hljs-string">&quot;&lt;br /&gt;&quot;</span>);</span><br><span class="language-javascript">	<span class="hljs-comment">//获取月</span></span><br><span class="language-javascript">	<span class="hljs-comment">//月份从0开始0~11</span></span><br><span class="language-javascript">	<span class="hljs-keyword">var</span> month=date.<span class="hljs-title function_">getMonth</span>();</span><br><span class="language-javascript">	<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">write</span>(month+<span class="hljs-number">1</span>+<span class="hljs-string">&quot;&lt;br /&gt;&quot;</span>);</span><br><span class="language-javascript">	<span class="hljs-comment">//获取日</span></span><br><span class="language-javascript">	<span class="hljs-keyword">var</span> dat=date.<span class="hljs-title function_">getDate</span>();</span><br><span class="language-javascript">	<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">write</span>(dat+<span class="hljs-string">&quot;&lt;br /&gt;&quot;</span>);</span><br><span class="language-javascript">	<span class="hljs-comment">//获取星期几</span></span><br><span class="language-javascript">	<span class="hljs-keyword">var</span> day=date.<span class="hljs-title function_">getDay</span>();</span><br><span class="language-javascript">	<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">write</span>(day+<span class="hljs-string">&quot;&lt;br /&gt;&quot;</span>);</span><br><span class="language-javascript">	<span class="hljs-comment">//获取小时</span></span><br><span class="language-javascript">	<span class="hljs-keyword">var</span> hours=date.<span class="hljs-title function_">getHours</span>();</span><br><span class="language-javascript">	<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">write</span>(hours+<span class="hljs-string">&quot;&lt;br /&gt;&quot;</span>);</span><br><span class="language-javascript">	<span class="hljs-comment">//获取分钟</span></span><br><span class="language-javascript">	<span class="hljs-keyword">var</span> minute=date.<span class="hljs-title function_">getMinutes</span>();</span><br><span class="language-javascript">	<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">write</span>(minute+<span class="hljs-string">&quot;&lt;br /&gt;&quot;</span>);</span><br><span class="language-javascript">	<span class="hljs-comment">//获取秒</span></span><br><span class="language-javascript">	<span class="hljs-keyword">var</span> seconds=date.<span class="hljs-title function_">getSeconds</span>();</span><br><span class="language-javascript">	<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">write</span>(seconds+<span class="hljs-string">&quot;&lt;br /&gt;&quot;</span>);</span><br><span class="language-javascript">	<span class="hljs-comment">//获取毫秒</span></span><br><span class="language-javascript">	<span class="hljs-keyword">var</span> milliseconds=date.<span class="hljs-title function_">getMilliseconds</span>();</span><br><span class="language-javascript">	<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">write</span>(milliseconds+<span class="hljs-string">&quot;&lt;br /&gt;&quot;</span>);</span><br><span class="language-javascript">	<span class="hljs-comment">//获取时间戳 就是用来计算日期差</span></span><br><span class="language-javascript">	<span class="hljs-comment">//时间戳:就是1970年1月1日00;00;00到某个日期的毫秒</span></span><br><span class="language-javascript">	<span class="hljs-keyword">var</span> time=date.<span class="hljs-title function_">getTime</span>();</span><br><span class="language-javascript">	<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">write</span>(time+<span class="hljs-string">&quot;&lt;br /&gt;&quot;</span>);</span><br><span class="language-javascript">	<span class="hljs-comment">//nwe Date(); 获取此时此刻系统的时间</span></span><br><span class="language-javascript">	<span class="hljs-comment">//我们可以自己赋值 年 月(月是从开始) 日</span></span><br><span class="language-javascript">	<span class="hljs-keyword">var</span> d1 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(<span class="hljs-string">&quot;2022&quot;</span>, <span class="hljs-string">&quot;2&quot;</span>, <span class="hljs-string">&quot;14&quot;</span>);</span><br><span class="language-javascript">	<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">write</span>(d1);</span><br><span class="language-javascript">	<span class="hljs-keyword">var</span> d2 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(<span class="hljs-string">&quot;2021&quot;</span>, <span class="hljs-string">&quot;7&quot;</span>, <span class="hljs-string">&quot;19&quot;</span>, <span class="hljs-string">&quot;23&quot;</span>, <span class="hljs-string">&quot;19&quot;</span>, <span class="hljs-string">&quot;10&quot;</span>);</span><br><span class="language-javascript">	<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">write</span>(d2);</span><br><span class="language-javascript">	<span class="hljs-keyword">var</span> d3 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(<span class="hljs-number">1289378978973</span>);<span class="hljs-comment">//时间戳</span></span><br><span class="language-javascript">	<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">write</span>(d3);</span><br><span class="language-javascript">	<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">write</span>(d3.<span class="hljs-title function_">getFullYear</span>() + <span class="hljs-string">&quot;年&quot;</span> + (d3.<span class="hljs-title function_">getMonth</span>() + <span class="hljs-number">1</span>)  + <span class="hljs-string">&quot;月&quot;</span> + d3.<span class="hljs-title function_">getDate</span>() + <span class="hljs-string">&quot;日 &quot;</span> + d3.<span class="hljs-title function_">getHours</span>() + <span class="hljs-string">&quot;:&quot;</span> + d3.<span class="hljs-title function_">getMinutes</span>() + <span class="hljs-string">&quot;:&quot;</span> + d3.<span class="hljs-title function_">getSeconds</span>());</span><br><span class="language-javascript">	</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<p>运行结果:<br><img src="https://img-blog.csdnimg.cn/590737f99e8e4cdcabf99bf77bfb275e.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span> /&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>京东轮播图<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/css&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;css/jingd.css&quot;</span>/&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>	<br>	<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;root&quot;</span>&gt;</span><br>			<span class="hljs-comment">&lt;!--轮播图--&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;lunbo&quot;</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;img/t1.png&quot;</span>/&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;img/t2.jpg&quot;</span>/&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;img/t3.jpg&quot;</span>/&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;img/t4.jpg&quot;</span>/&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;img/t5.jpg&quot;</span>/&gt;</span><br>			<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>			<span class="hljs-comment">&lt;!--左右切换按钮--&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn&quot;</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;left-btn&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;right-btn&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>			<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>			<span class="hljs-comment">&lt;!--圆点指示器--&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;dots&quot;</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>				<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span><br>			<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span><br>		<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;js/jd.js&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br></code></pre></td></tr></table></figure>
+<p>运行结果:<br>会自动播放<br>鼠标触及停止<br>点一次播放一次<br><img src="https://img-blog.csdnimg.cn/045d85a4cb0743049d29c1ed23840aaf.png" srcset="/img/loading.gif" lazyload></p>
 
                 
               </div>
@@ -337,8 +337,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>前端js中Date的使用</div>
-      <div>http://ultracode.cn/2020/11/12/JS/前端js中Date的使用/</div>
+      <div>前端js实现京东轮播图</div>
+      <div>http://ultracode.cn/2020/11/13/JS/前端js实现京东轮播图/</div>
     </div>
     <div class="license-meta">
       
@@ -350,7 +350,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2020年11月12日</div>
+          <div>2020年11月13日</div>
         </div>
       
       
@@ -382,18 +382,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/11/13/JS/%E5%89%8D%E7%AB%AFjs%E5%AE%9E%E7%8E%B0%E6%97%B6%E9%92%9F%E6%95%88%E6%9E%9C/" title="前端js实现时钟效果">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">前端js实现时钟效果</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/11/12/JS/%E5%89%8D%E7%AB%AFjs%E4%B8%AD%E7%9A%84%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E5%92%8C%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84/" title="前端js中的冒泡排序和二维数组">
-                        <span class="hidden-mobile">前端js中的冒泡排序和二维数组</span>
+                      <a href="/2020/11/13/JS/%E5%89%8D%E7%AB%AFjs%E5%AE%9E%E7%8E%B0%E6%97%B6%E9%92%9F%E6%95%88%E6%9E%9C/" title="前端js实现时钟效果">
+                        <span class="hidden-mobile">前端js实现时钟效果</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
