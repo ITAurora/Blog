@@ -18,22 +18,22 @@
   
     <meta name="description" content="摘要">
 <meta property="og:type" content="article">
-<meta property="og:title" content="利用js实现联动复选框">
-<meta property="og:url" content="http://ultracode.cn/2020/11/23/JS/%E5%88%A9%E7%94%A8js%E5%AE%9E%E7%8E%B0%E8%81%94%E5%8A%A8%E5%A4%8D%E9%80%89%E6%A1%86/index.html">
+<meta property="og:title" content="js中的BOM基础">
+<meta property="og:url" content="http://ultracode.cn/2020/11/24/JS/js%E4%B8%AD%E7%9A%84BOM%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Win">
 <meta property="og:description" content="摘要">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://ultracode.cn/articleImages/14.jpg">
-<meta property="article:published_time" content="2020-11-23T03:10:10.000Z">
-<meta property="article:modified_time" content="2023-08-28T02:33:22.130Z">
+<meta property="og:image" content="http://ultracode.cn/articleImages/16.jpg">
+<meta property="article:published_time" content="2020-11-24T03:10:10.000Z">
+<meta property="article:modified_time" content="2023-08-29T07:57:23.639Z">
 <meta property="article:author" content="Win">
 <meta property="article:tag" content="JS">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://ultracode.cn/articleImages/14.jpg">
+<meta name="twitter:image" content="http://ultracode.cn/articleImages/16.jpg">
   
   
   
-  <title>利用js实现联动复选框 - Win</title>
+  <title>js中的BOM基础 - Win</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -205,13 +205,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/../articleImages/14.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/../articleImages/16.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="利用js实现联动复选框"></span>
+            <span id="subtitle" data-typed-text="js中的BOM基础"></span>
           
         </div>
 
@@ -222,8 +222,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2020-11-23 11:10" pubdate>
-          2020年11月23日 上午
+        <time datetime="2020-11-24 11:10" pubdate>
+          2020年11月24日 上午
         </time>
       </span>
     
@@ -234,7 +234,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.9k 字
+          1.1k 字
         
       </span>
     
@@ -245,7 +245,7 @@
         
         
         
-          16 分钟
+          10 分钟
         
       </span>
     
@@ -283,15 +283,15 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">利用js实现联动复选框</h1>
+            <h1 style="display: none">js中的BOM基础</h1>
             
             
               <div class="markdown-body">
                 
                 <meta name="referrer" content="no-referrer"/>
 
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>		<span class="hljs-comment">&lt;!--省份--&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;sheng&quot;</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;省份&quot;</span>&gt;</span>省份<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;河南省&quot;</span>&gt;</span>河南省<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;浙江省&quot;</span>&gt;</span>浙江省<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>		<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br>		<span class="hljs-comment">&lt;!--城市--&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;city&quot;</span>&gt;</span><br>			<span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;市区&quot;</span>&gt;</span>市区<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>		<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br>		<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript">	<span class="hljs-comment">//1.获取标签</span></span><br><span class="language-javascript">	<span class="hljs-comment">//2.定义变量</span></span><br><span class="language-javascript">	<span class="hljs-keyword">var</span> arr1 = [<span class="hljs-string">&quot;郑州市&quot;</span>, <span class="hljs-string">&quot;洛阳市&quot;</span>, <span class="hljs-string">&quot;驻马店市&quot;</span>, <span class="hljs-string">&quot;焦作市&quot;</span>, <span class="hljs-string">&quot;南阳市&quot;</span>, <span class="hljs-string">&quot;新乡市&quot;</span>, <span class="hljs-string">&quot;开封市&quot;</span>, <span class="hljs-string">&quot;漯河市&quot;</span>, <span class="hljs-string">&quot;濮阳市&quot;</span>, <span class="hljs-string">&quot;安阳市&quot;</span>];</span><br><span class="language-javascript">	<span class="hljs-keyword">var</span> arr2 = [<span class="hljs-string">&quot;杭州市&quot;</span>, <span class="hljs-string">&quot;金华市&quot;</span>, <span class="hljs-string">&quot;义乌市&quot;</span>, <span class="hljs-string">&quot;温州市&quot;</span>, <span class="hljs-string">&quot;绍兴市&quot;</span>, <span class="hljs-string">&quot;宁波市&quot;</span>, <span class="hljs-string">&quot;嘉兴市&quot;</span>];</span><br><span class="language-javascript">	</span><br><span class="language-javascript">	<span class="hljs-comment">//3.select的事件 onchange 也就是只有值变化 才会执行!</span></span><br><span class="language-javascript">	sheng.<span class="hljs-property">onchange</span> = <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;</span><br><span class="language-javascript">		<span class="hljs-comment">//方式1:简单暴力又好用</span></span><br><span class="language-javascript"><span class="hljs-comment">//		city.innerHTML = &quot;&quot;;//清空子标签内容</span></span><br><span class="language-javascript">		<span class="hljs-comment">//方式2: city标签中的子标签是数组容器</span></span><br><span class="language-javascript"><span class="hljs-comment">//		for(var i = 0; i &lt; city.children.length; i++)&#123;</span></span><br><span class="language-javascript"><span class="hljs-comment">//			city.children[i].remove();</span></span><br><span class="language-javascript"><span class="hljs-comment">//			i--;</span></span><br><span class="language-javascript"><span class="hljs-comment">//		&#125;</span></span><br><span class="language-javascript">		<span class="hljs-comment">// [1, 2, 3, 4, 5, 6]</span></span><br><span class="language-javascript">		<span class="hljs-comment">//方式3:</span></span><br><span class="language-javascript">		<span class="hljs-keyword">var</span> l = city.<span class="hljs-property">children</span>.<span class="hljs-property">length</span>;</span><br><span class="language-javascript">		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; l; i++)&#123;</span><br><span class="language-javascript">			city.<span class="hljs-property">children</span>[<span class="hljs-number">0</span>].<span class="hljs-title function_">remove</span>();</span><br><span class="language-javascript">		&#125;</span><br><span class="language-javascript">		<span class="hljs-comment">//问题在于  i++一直在自增; </span></span><br><span class="language-javascript">		<span class="hljs-comment">//city.children.length 这个值一直在减小!!</span></span><br><span class="language-javascript">		</span><br><span class="language-javascript">		</span><br><span class="language-javascript">		</span><br><span class="language-javascript">		<span class="hljs-comment">// firstElementChild 要保证,其不能为空!!</span></span><br><span class="language-javascript">		<span class="hljs-comment">//注意   程序不允许  undefined.语法  也不允许null.语法</span></span><br><span class="language-javascript">		<span class="hljs-comment">//只有真实有效的对象可以点语法操作!</span></span><br><span class="language-javascript">		</span><br><span class="language-javascript">		<span class="hljs-comment">//定义一数组  来接收应该显示的市区数组</span></span><br><span class="language-javascript">		<span class="hljs-keyword">var</span> tempArray = [<span class="hljs-string">&quot;市区&quot;</span>];</span><br><span class="language-javascript">		<span class="hljs-keyword">if</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">value</span> == <span class="hljs-string">&quot;河南省&quot;</span>)&#123;</span><br><span class="language-javascript">			tempArray = arr1;</span><br><span class="language-javascript">		&#125;</span><br><span class="language-javascript">		</span><br><span class="language-javascript">		<span class="hljs-keyword">if</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">value</span> == <span class="hljs-string">&quot;浙江省&quot;</span>)&#123;</span><br><span class="language-javascript">		  tempArray = arr2;</span><br><span class="language-javascript">		&#125;</span><br><span class="language-javascript">		<span class="hljs-comment">//--------------------------------</span></span><br><span class="language-javascript">		<span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; tempArray.<span class="hljs-property">length</span>; i++)&#123;</span><br><span class="language-javascript">			<span class="hljs-keyword">var</span> option1 = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&quot;option&quot;</span>);</span><br><span class="language-javascript">			option1.<span class="hljs-property">innerHTML</span> = tempArray[i];</span><br><span class="language-javascript">			option1.<span class="hljs-property">value</span> = tempArray[i];</span><br><span class="language-javascript">			city.<span class="hljs-title function_">appendChild</span>(option1);</span><br><span class="language-javascript">		&#125;</span><br><span class="language-javascript">		<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(tempArray);</span><br><span class="language-javascript">	&#125;</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
-<p>运行结果:<br><img src="https://img-blog.csdnimg.cn/18adf98828264331839f7537edfbabe9.png" srcset="/img/loading.gif" lazyload><br><img src="https://img-blog.csdnimg.cn/8500ea743ede44c0833c42cfd5f25928.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span> /&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>		<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript"><span class="hljs-comment">/*</span></span><br><span class="hljs-comment"><span class="language-javascript"> BOM Browser object model 浏览器对象模型!!!</span></span><br><span class="hljs-comment"><span class="language-javascript"> BOM是由一系列对象组成,每个对象都有自己的属性和方法,用来管理浏览器窗口与窗口之间的通信!!!</span></span><br><span class="hljs-comment"><span class="language-javascript"> 重点:</span></span><br><span class="hljs-comment"><span class="language-javascript"> window是BOM中的顶层(核心)对象,所有的对象都是通过它延伸出来的!!!</span></span><br><span class="hljs-comment"><span class="language-javascript"> 由window延伸出来的对象有:</span></span><br><span class="hljs-comment"><span class="language-javascript"> 1.doucument</span></span><br><span class="hljs-comment"><span class="language-javascript"> 2.hsitory</span></span><br><span class="hljs-comment"><span class="language-javascript"> 3.location</span></span><br><span class="hljs-comment"><span class="language-javascript"> 4.navigator</span></span><br><span class="hljs-comment"><span class="language-javascript"> 5.screen </span></span><br><span class="hljs-comment"><span class="language-javascript"> 6.frames(已经被弃用,可忽略!只要在老的网站源码中可能会见到!!)</span></span><br><span class="hljs-comment"><span class="language-javascript"> </span></span><br><span class="hljs-comment"><span class="language-javascript"> window特点:</span></span><br><span class="hljs-comment"><span class="language-javascript"> 所有的全局变量,都是window的属性!</span></span><br><span class="hljs-comment"><span class="language-javascript"> 所有的全局函数方法,都是window的方法!!</span></span><br><span class="hljs-comment"><span class="language-javascript"> 在使用window的子对象/属性,可以省略window!!</span></span><br><span class="hljs-comment"><span class="language-javascript"> */</span></span><br><span class="language-javascript"><span class="hljs-comment">//举例子!!!!!!!!!!!!!!!!!!!!!!!!</span></span><br><span class="language-javascript"><span class="hljs-keyword">var</span> a = <span class="hljs-number">10</span>;</span><br><span class="language-javascript"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(a);</span><br><span class="language-javascript"><span class="hljs-comment">//其实a 就是window的属性</span></span><br><span class="language-javascript"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">window</span>.<span class="hljs-property">a</span>);</span><br><span class="language-javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">sum</span>(<span class="hljs-params">a, b</span>)&#123;</span><br><span class="language-javascript">	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(a + b);</span><br><span class="language-javascript">&#125;</span><br><span class="language-javascript"></span><br><span class="language-javascript"><span class="hljs-title function_">sum</span>(<span class="hljs-number">10</span>, <span class="hljs-number">20</span>);</span><br><span class="language-javascript"><span class="hljs-comment">//也可以</span></span><br><span class="language-javascript"><span class="hljs-variable language_">window</span>.<span class="hljs-title function_">sum</span>(<span class="hljs-number">99</span>, <span class="hljs-number">778</span>);</span><br><span class="language-javascript"><span class="hljs-comment">//定义变量名  不要使用top  因为top表示的就是顶层对象window</span></span><br><span class="language-javascript"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(top);</span><br><span class="language-javascript"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">window</span>);  <span class="hljs-comment">//window对象</span></span><br><span class="language-javascript"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(self); <span class="hljs-comment">//self关键字  永远指代window对象!!!</span></span><br><span class="language-javascript"><span class="hljs-comment">//-------------</span></span><br><span class="language-javascript"><span class="hljs-comment">//平时我们访问document</span></span><br><span class="language-javascript"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">document</span>);</span><br><span class="language-javascript"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">window</span>.<span class="hljs-property">document</span>);<span class="hljs-comment">//一般可忽略window</span></span><br><span class="language-javascript"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span>);</span><br><span class="language-javascript"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">window</span>.<span class="hljs-property">document</span>.<span class="hljs-property">body</span>);<span class="hljs-comment">//一般可忽略window</span></span><br><span class="language-javascript"></span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>运行结果:<br><img src="https://img-blog.csdnimg.cn/155155c650a34ce097d57e8adab09b14.png" srcset="/img/loading.gif" lazyload></p>
 
                 
               </div>
@@ -337,8 +337,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>利用js实现联动复选框</div>
-      <div>http://ultracode.cn/2020/11/23/JS/利用js实现联动复选框/</div>
+      <div>js中的BOM基础</div>
+      <div>http://ultracode.cn/2020/11/24/JS/js中的BOM基础/</div>
     </div>
     <div class="license-meta">
       
@@ -350,7 +350,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2020年11月23日</div>
+          <div>2020年11月24日</div>
         </div>
       
       
@@ -382,18 +382,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/11/24/JS/%E5%88%A9%E7%94%A8js%E5%86%99%E4%B8%80%E4%B8%AA%E7%B1%BB%E4%BC%BC%E6%89%93%E5%9C%B0%E9%BC%A0%E7%9A%84%E5%B0%8F%E6%B8%B8%E6%88%8F/" title="利用js实现一个打地鼠的小游戏">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">利用js实现一个打地鼠的小游戏</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/11/23/JS/%E5%88%A9%E7%94%A8js%E5%86%99%E4%B8%80%E4%B8%AA%E7%A2%B0%E6%92%9E%E5%8F%8D%E5%BC%B9/" title="利用js写碰撞反弹方法">
-                        <span class="hidden-mobile">利用js写碰撞反弹方法</span>
+                      <a href="/2020/11/24/JS/%E5%88%A9%E7%94%A8js%E5%86%99%E4%B8%80%E4%B8%AA%E7%B1%BB%E4%BC%BC%E6%89%93%E5%9C%B0%E9%BC%A0%E7%9A%84%E5%B0%8F%E6%B8%B8%E6%88%8F/" title="利用js实现一个打地鼠的小游戏">
+                        <span class="hidden-mobile">利用js实现一个打地鼠的小游戏</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
