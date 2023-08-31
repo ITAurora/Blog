@@ -461,7 +461,7 @@ footer:
 index:
   # 首页 Banner 头图，可以是相对路径或绝对路径，以下相同
   # Path of Banner image, can be a relative path or an absolute path, the same on other pages
-  banner_img: /articleImages/熊猫剑客.png
+  banner_img: /tnt/30.jpg
   # /img/default.png
   # 头图高度，屏幕百分比
   # Height ratio of banner image
@@ -887,7 +887,7 @@ giscus:
 # Archive Page
 #---------------------------
 archive:
-  banner_img: /articleImages/熊猫剑客.png
+  banner_img: /tnt/3.jpg
   banner_img_height: 60
   banner_mask_alpha: 0.3
 
@@ -898,7 +898,7 @@ archive:
 #---------------------------
 category:
   enable: true
-  banner_img: /articleImages/熊猫剑客.png
+  banner_img: /tnt/4.jpg
   banner_img_height: 60
   banner_mask_alpha: 0.3
 
@@ -927,7 +927,7 @@ category:
 #---------------------------
 tag:
   enable: true
-  banner_img: /articleImages/熊猫剑客.png
+  banner_img: /tnt/25.jpg
   banner_img_height: 80
   banner_mask_alpha: 0.3
   tagcloud:
@@ -991,7 +991,7 @@ page404:
 #---------------------------
 links:
   enable: true
-  banner_img: /articleImages/熊猫剑客.png
+  banner_img: /tnt/21.jpg
   banner_img_height: 60
   banner_mask_alpha: 0.3
   # 友链的成员项
