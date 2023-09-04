@@ -17,7 +17,6 @@ excerpt: 摘要
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<!--2.内部引用css 不适合项目开发，练习时可用-->
 		<style type="text/css">
 			/*css编码区域*/
 			div{
