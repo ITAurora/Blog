@@ -1,5 +1,5 @@
 ---
-title: js绑定事件以及事件冒泡
+title: js中event对象以及其相关属性
 date: 2020-12-05 10:10:10
 tags:
   - JS
