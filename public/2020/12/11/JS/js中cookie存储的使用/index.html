@@ -18,22 +18,22 @@
   
     <meta name="description" content="摘要">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js中localStorage存储的使用">
-<meta property="og:url" content="http://ultracode.cn/2020/12/10/JS/js%E4%B8%ADlocalStorage%E5%AD%98%E5%82%A8%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:title" content="js中cookie存储的使用">
+<meta property="og:url" content="http://ultracode.cn/2020/12/11/JS/js%E4%B8%ADcookie%E5%AD%98%E5%82%A8%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="Win">
 <meta property="og:description" content="摘要">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://ultracode.cn/articleImages/2.jpg">
-<meta property="article:published_time" content="2020-12-10T02:10:10.000Z">
-<meta property="article:modified_time" content="2023-09-14T15:36:27.578Z">
+<meta property="og:image" content="http://ultracode.cn/articleImages/3.jpg">
+<meta property="article:published_time" content="2020-12-11T02:10:10.000Z">
+<meta property="article:modified_time" content="2023-09-15T15:54:13.533Z">
 <meta property="article:author" content="Win">
 <meta property="article:tag" content="JS">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://ultracode.cn/articleImages/2.jpg">
+<meta name="twitter:image" content="http://ultracode.cn/articleImages/3.jpg">
   
   
   
-  <title>js中localStorage存储的使用 - Win</title>
+  <title>js中cookie存储的使用 - Win</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -205,13 +205,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('/../articleImages/2.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('/../articleImages/3.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="js中localStorage存储的使用"></span>
+            <span id="subtitle" data-typed-text="js中cookie存储的使用"></span>
           
         </div>
 
@@ -222,8 +222,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2020-12-10 10:10" pubdate>
-          2020年12月10日 上午
+        <time datetime="2020-12-11 10:10" pubdate>
+          2020年12月11日 上午
         </time>
       </span>
     
@@ -234,7 +234,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.6k 字
+          1.3k 字
         
       </span>
     
@@ -245,7 +245,7 @@
         
         
         
-          14 分钟
+          11 分钟
         
       </span>
     
@@ -283,15 +283,15 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">js中localStorage存储的使用</h1>
+            <h1 style="display: none">js中cookie存储的使用</h1>
             
             
               <div class="markdown-body">
                 
                 <meta name="referrer" content="no-referrer"/>
 
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span> /&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>		<br>	<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript">	<span class="hljs-comment">/*</span></span><br><span class="hljs-comment"><span class="language-javascript">	 localStorage本地存储  HTML5的新技术!</span></span><br><span class="hljs-comment"><span class="language-javascript">	 特点:</span></span><br><span class="hljs-comment"><span class="language-javascript">	 1.长久存储,没有时间限制</span></span><br><span class="hljs-comment"><span class="language-javascript">	 2.自带增删改查的函数,特别好用!!</span></span><br><span class="hljs-comment"><span class="language-javascript">	 3.localStorage 是系统提供的全局对象,直接访问即可!!</span></span><br><span class="hljs-comment"><span class="language-javascript">	 重要:</span></span><br><span class="hljs-comment"><span class="language-javascript">	 localStorage不仅做本地存储,以后更多的功能是可以跨页面传值!</span></span><br><span class="hljs-comment"><span class="language-javascript">	 页面传值,才是它更好用的功能!!!</span></span><br><span class="hljs-comment"><span class="language-javascript">	 因为浏览器只有一个,所以其存储数据的位置也只有一个!那就意味着无论你从哪个页面将数据存储,它们都是存在同一个对象localStorage中.那么你就能从任意页面将数据取出!!!</span></span><br><span class="hljs-comment"><span class="language-javascript">	 </span></span><br><span class="hljs-comment"><span class="language-javascript">	 </span></span><br><span class="hljs-comment"><span class="language-javascript">	 </span></span><br><span class="hljs-comment"><span class="language-javascript">	 */</span></span><br><span class="language-javascript">	</span><br><span class="language-javascript"><span class="hljs-comment">//	console.log(localStorage);</span></span><br><span class="language-javascript">	<span class="hljs-comment">//1.增  就是存储数据</span></span><br><span class="language-javascript">	<span class="hljs-comment">//写法1  对象.属性</span></span><br><span class="language-javascript"><span class="hljs-comment">//	localStorage.username = &quot;Aurora&quot;;</span></span><br><span class="language-javascript"><span class="hljs-comment">//	localStorage.passwd = &quot;666&quot;;</span></span><br><span class="language-javascript">	<span class="hljs-comment">//写法2  索引的写法 对象[&quot;属性名&quot;]</span></span><br><span class="language-javascript"><span class="hljs-comment">//	localStorage[&quot;age&quot;] = 20;</span></span><br><span class="language-javascript"><span class="hljs-comment">//	localStorage[&quot;phone&quot;] = &quot;15362837489&quot;;</span></span><br><span class="language-javascript">	<span class="hljs-comment">//写法3 localStorage自带的方法</span></span><br><span class="language-javascript"><span class="hljs-comment">//	localStorage.setItem(&quot;sex&quot;, &quot;女&quot;);</span></span><br><span class="language-javascript"><span class="hljs-comment">//	localStorage.setItem(&quot;hobby&quot;, [&quot;唱&quot;, &quot;跳&quot;, &quot;rap&quot;]);</span></span><br><span class="language-javascript">	</span><br><span class="language-javascript">	<span class="hljs-comment">//2.修改 跟增数据一样直接访问属性即可</span></span><br><span class="language-javascript"><span class="hljs-comment">//	localStorage.passwd = &quot;123321&quot;;</span></span><br><span class="language-javascript"><span class="hljs-comment">//	localStorage.age = 18;</span></span><br><span class="language-javascript"><span class="hljs-comment">//	localStorage.setItem(&quot;sex&quot;, &quot;小姐姐&quot;);</span></span><br><span class="language-javascript">	<span class="hljs-comment">//以上三种写法  修改数据一样适用! 其实系统就是看你操作的属性是否存在!属性不存在那就是新增,属性存储那就是修改!!</span></span><br><span class="language-javascript">	<span class="hljs-comment">//需要注意:localStorage只能存储字符串,如果存储的是数组或者其他类型数据;都会先转为字符串,再存储!!!!!!!!!</span></span><br><span class="language-javascript">	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">localStorage</span>);</span><br><span class="language-javascript">	</span><br><span class="language-javascript">	<span class="hljs-comment">//3.查 就是获取值 从浏览器中取出值! 以下三种随便都可以!!只要属性名确实存在!就能取值!</span></span><br><span class="language-javascript">	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">localStorage</span>.<span class="hljs-property">username</span>);</span><br><span class="language-javascript">	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">localStorage</span>[<span class="hljs-string">&quot;sex&quot;</span>]);</span><br><span class="language-javascript">	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">localStorage</span>.<span class="hljs-title function_">getItem</span>(<span class="hljs-string">&quot;passwd&quot;</span>));</span><br><span class="language-javascript">	<span class="hljs-comment">//set赋值   get取值</span></span><br><span class="language-javascript">	<span class="hljs-comment">//item 中文翻译 条目;  属性名+属性值这样一对一对的数据,就是一个条目!!</span></span><br><span class="language-javascript">	<span class="hljs-comment">//4.删除  </span></span><br><span class="language-javascript"><span class="hljs-comment">//	localStorage.removeItem(&quot;sex&quot;);</span></span><br><span class="language-javascript"><span class="hljs-comment">//	localStorage.removeItem(&quot;phone&quot;);</span></span><br><span class="language-javascript">	<span class="hljs-comment">//5.清空操作</span></span><br><span class="language-javascript"><span class="hljs-comment">//	localStorage.clear();</span></span><br><span class="language-javascript">	</span><br><span class="language-javascript">	</span><br><span class="language-javascript">	</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br><br></code></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/3b3f6c3df3984c63abae013e2845de79.png" srcset="/img/loading.gif" lazyload><br><img src="https://img-blog.csdnimg.cn/7befdf609a4247bfa811acde6ecf1657.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span>&gt;</span><br>		<span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br>	<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span><br><span class="language-javascript">	</span><br><span class="language-javascript">	<span class="hljs-comment">/*</span></span><br><span class="hljs-comment"><span class="language-javascript">	 cookie的概念:</span></span><br><span class="hljs-comment"><span class="language-javascript">	 cookie的本质上是一段文本信息,存储本地浏览器中,而且可以跟随网络请求在本地与服务器之间传递(服务器后面node会讲解).当某个网站能买到对应请求的cookie信息,就可以根据信息对用户的行为或者偏好设置做出反馈!</span></span><br><span class="hljs-comment"><span class="language-javascript">	 cookie的适用场景:</span></span><br><span class="hljs-comment"><span class="language-javascript">	 1.保存用户的登录状态</span></span><br><span class="hljs-comment"><span class="language-javascript">	 2.存储购物车信息等</span></span><br><span class="hljs-comment"><span class="language-javascript">	 3.跟踪用户行为,进行个性化网页定制</span></span><br><span class="hljs-comment"><span class="language-javascript">	 </span></span><br><span class="hljs-comment"><span class="language-javascript">	 cookie的弊端:</span></span><br><span class="hljs-comment"><span class="language-javascript">	 1.容量小 大约4kb</span></span><br><span class="hljs-comment"><span class="language-javascript">	 2.cookie可以手动删除(非代码行操作删除)</span></span><br><span class="hljs-comment"><span class="language-javascript">	 3.限时存储,要设置存储时间限制!! </span></span><br><span class="hljs-comment"><span class="language-javascript">	 */</span></span><br><span class="language-javascript">	</span><br><span class="language-javascript">	</span><br><span class="language-javascript">	<span class="hljs-comment">//方式1:</span></span><br><span class="language-javascript">	<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-property">cookie</span>);<span class="hljs-comment">//cookie本质 你看到啦!就是一个字符串</span></span><br><span class="language-javascript">	<span class="hljs-comment">//max-age 以秒为单位,存储多长时间!! </span></span><br><span class="language-javascript">	<span class="hljs-comment">//多少秒之后失效!!!</span></span><br><span class="language-javascript">	<span class="hljs-comment">//注意cookie的时间是以0时区的时间为标准的! 所以差8个小时!!!但是不影响使用!! </span></span><br><span class="language-javascript">	<span class="hljs-variable language_">document</span>.<span class="hljs-property">cookie</span> = <span class="hljs-string">&quot;name=lily;max-age=20&quot;</span>;  <span class="hljs-comment">//20秒之后就失效</span></span><br><span class="language-javascript">	<span class="hljs-comment">//3天后失效</span></span><br><span class="language-javascript">	<span class="hljs-keyword">var</span> time1 = <span class="hljs-number">60</span> * <span class="hljs-number">60</span> * <span class="hljs-number">24</span> * <span class="hljs-number">3</span>;</span><br><span class="language-javascript">	<span class="hljs-variable language_">document</span>.<span class="hljs-property">cookie</span> = <span class="hljs-string">&quot;passwd=123456;max-age=&quot;</span> + time1;</span><br><span class="language-javascript">	</span><br><span class="language-javascript">	<span class="hljs-comment">//怎么删除呢?? 没有直接删除的方式  只能让它立刻失效就行</span></span><br><span class="language-javascript">	<span class="hljs-comment">//因为只要失效 就会自动删掉!!!</span></span><br><span class="language-javascript"><span class="hljs-comment">//	document.cookie = &quot;passwd=123456;max-age=-1&quot;;</span></span><br><span class="language-javascript">	</span><br><span class="language-javascript">	</span><br><span class="language-javascript">	<span class="hljs-comment">//方式2:</span></span><br><span class="language-javascript">	<span class="hljs-comment">//expires 识别日期字符串</span></span><br><span class="language-javascript">	<span class="hljs-comment">//1天后失效</span></span><br><span class="language-javascript">	<span class="hljs-keyword">var</span> now = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>();<span class="hljs-comment">//获取此时此刻  是参考系统时间!!!</span></span><br><span class="language-javascript">	<span class="hljs-keyword">var</span> tomorrow = now.<span class="hljs-title function_">getDate</span>() + <span class="hljs-number">1</span>; <span class="hljs-comment">//天数+1</span></span><br><span class="language-javascript">	now.<span class="hljs-title function_">setDate</span>(tomorrow); <span class="hljs-comment">//再把+1的后日期 重新设置</span></span><br><span class="language-javascript">	<span class="hljs-comment">///--------------------------------</span></span><br><span class="language-javascript">	<span class="hljs-comment">//1年后   </span></span><br><span class="language-javascript">     <span class="hljs-comment">//now.setFullYear(now.getFullYear() + 1);</span></span><br><span class="language-javascript">     <span class="hljs-comment">//20分钟后</span></span><br><span class="language-javascript"><span class="hljs-comment">//   now.setMinutes(now.getMinutes() + 20);</span></span><br><span class="language-javascript">	<span class="hljs-variable language_">document</span>.<span class="hljs-property">cookie</span> = <span class="hljs-string">&quot;hobby=打代码;expires=&quot;</span> + now.<span class="hljs-title function_">toString</span>();</span><br><span class="language-javascript">	</span><br><span class="language-javascript">	</span><br><span class="language-javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/123665f5515843069c7a0d93d62da5f5.png" srcset="/img/loading.gif" lazyload></p>
 
                 
               </div>
@@ -337,8 +337,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>js中localStorage存储的使用</div>
-      <div>http://ultracode.cn/2020/12/10/JS/js中localStorage存储的使用/</div>
+      <div>js中cookie存储的使用</div>
+      <div>http://ultracode.cn/2020/12/11/JS/js中cookie存储的使用/</div>
     </div>
     <div class="license-meta">
       
@@ -350,7 +350,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2020年12月10日</div>
+          <div>2020年12月11日</div>
         </div>
       
       
@@ -382,9 +382,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/12/11/JS/js%E4%B8%ADcookie%E5%AD%98%E5%82%A8%E7%9A%84%E4%BD%BF%E7%94%A8/" title="js中cookie存储的使用">
+                      <a href="/2020/12/11/JS/js%E4%B8%AD%E5%AF%B9%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9B%E8%A1%8C%E7%9A%84%E6%93%8D%E4%BD%9C/" title="js中对字符串进行的操作">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">js中cookie存储的使用</span>
+                        <span class="hidden-mobile">js中对字符串进行的操作</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -392,8 +392,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/12/08/JS/%E5%88%A9%E7%94%A8js%E5%86%99%E4%B8%80%E4%B8%AA%E9%A3%9E%E7%BF%94%E5%B0%8F%E9%B8%9F%E5%B0%8F%E6%B8%B8%E6%88%8F/" title="利用js写一个飞翔小鸟小游戏">
-                        <span class="hidden-mobile">利用js写一个飞翔小鸟小游戏</span>
+                      <a href="/2020/12/10/JS/js%E4%B8%ADlocalStorage%E5%AD%98%E5%82%A8%E7%9A%84%E4%BD%BF%E7%94%A8/" title="js中localStorage存储的使用">
+                        <span class="hidden-mobile">js中localStorage存储的使用</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
