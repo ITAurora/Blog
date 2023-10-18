@@ -5,8 +5,8 @@ tags:
   - JQ
 categories:
   - JQ
-index_img: ../articleImages/4.jpg
-banner_img: ../articleImages/4.jpg
+index_img: ../articleImages/5.jpg
+banner_img: ../articleImages/5.jpg
 excerpt: 摘要
 ---
 <meta name="referrer" content="no-referrer"/>
