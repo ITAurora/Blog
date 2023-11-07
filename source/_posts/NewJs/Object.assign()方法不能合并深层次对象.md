@@ -4,7 +4,7 @@ date: 2021-10-15 10:10:10
 tags:
   - JS
 categories:
-  - 前端三剑客
+  - JS
 index_img: ../tnt/3.jpg
 banner_img: ../tnt/3.jpg
 excerpt: 摘要
