@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>关于在vue中使用eventBus接收监听被多次触发的解决办法</title>
+    <link href="/2021/11/03/NewVue2/%E5%85%B3%E4%BA%8E%E5%9C%A8vue%E4%B8%AD%E4%BD%BF%E7%94%A8eventBus%E6%8E%A5%E6%94%B6%E7%9B%91%E5%90%AC%E8%A2%AB%E5%A4%9A%E6%AC%A1%E8%A7%A6%E5%8F%91%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
+    <url>/2021/11/03/NewVue2/%E5%85%B3%E4%BA%8E%E5%9C%A8vue%E4%B8%AD%E4%BD%BF%E7%94%A8eventBus%E6%8E%A5%E6%94%B6%E7%9B%91%E5%90%AC%E8%A2%AB%E5%A4%9A%E6%AC%A1%E8%A7%A6%E5%8F%91%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
+    
+    <content type="html"><![CDATA[<meta name="referrer" content="no-referrer"/><p>先看这个bug<br>创建一个eventBus：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> <span class="hljs-title class_">Vue</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;vue&quot;</span>;<br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Vue</span>;<br></code></pre></td></tr></table></figure><p>兄弟组件分别导入eventBus：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> eventBus <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;eventBus&quot;</span>;<br></code></pre></td></tr></table></figure><p>传值：<br>这里我把传值直接放在了列表更新函数里面进行触发了</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js">fetchList () &#123;<br>      <span class="hljs-title function_">userList</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">listQuery</span>).<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">res</span>) =&gt;</span> &#123;<br>        <span class="hljs-variable language_">this</span>.<span class="hljs-property">tableData</span> = res.<span class="hljs-property">data</span>.<span class="hljs-property">data</span>;<br>        eventBus.$emit(<span class="hljs-string">&#x27;sendByBus&#x27;</span>, res.<span class="hljs-property">data</span>.<span class="hljs-property">data</span>)<br>        <span class="hljs-variable language_">this</span>.<span class="hljs-property">pageQuery</span>.<span class="hljs-property">p</span> = res.<span class="hljs-property">data</span>.<span class="hljs-property">page</span><br>      &#125;);<br>    &#125;,<br></code></pre></td></tr></table></figure><p>接收值：<br>同时更新界面数据</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js">eventBus.$on(<span class="hljs-string">&quot;sendByBus&quot;</span>, <span class="hljs-function">(<span class="hljs-params">data</span>) =&gt;</span> &#123;<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-property">person</span> = data;<br>      data.<span class="hljs-title function_">map</span>(<span class="hljs-function">(<span class="hljs-params">item, index</span>) =&gt;</span> &#123;<br>        <span class="hljs-variable language_">this</span>.<span class="hljs-property">allmodelType</span>.<span class="hljs-title function_">push</span>(item.<span class="hljs-property">id</span>)<br>      &#125;)<br>      <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">fetchList</span>()<br>    &#125;);<br></code></pre></td></tr></table></figure><p>问题来了：<br>当刷新完界面第一次点击tabs<br><img src="/../Vue2Img/image.png"><br>这还挺正常（它本身走一次smList，兄弟走一次userList然后又触发一次smList）<br>当我点击切换组件的时候 离谱的来了<br>第二次点击：<br><img src="/../Vue2Img/image-1.png"><br>第三次点击：<br><img src="/../Vue2Img/image-2.png"><br>它会一直累加进行请求 除非你再次刷新界面 它才会从新从1开始再累加 这肯定不行的<br>为什么会有这个问题呢？？？<br>首先事件总线是全局的 也就是说 当你每次emit触发一次这条线就已经创建存在了 当整个程序在运行时他就会一直存在 每当你触发一次就会新建一条事件总线 也是为什么会触发多次函数的问题所在<br>如何解决？？？<br>既然能创建肯定就能销毁，每次使用后把他销毁不久完了 就像计时器每次使用完都会有其相应的clear<br>组件销毁前销毁当前事件总线：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-title function_">beforeDestroy</span>(<span class="hljs-params"></span>)&#123;<br>    eventBus.$off(<span class="hljs-string">&quot;sendByBus&quot;</span>,)<br>  &#125;,<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Vue2问题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>JS</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Object.assign()方法不能合并深层次对象</title>
     <link href="/2021/10/15/NewJs/Object.assign()%E6%96%B9%E6%B3%95%E4%B8%8D%E8%83%BD%E5%90%88%E5%B9%B6%E6%B7%B1%E5%B1%82%E6%AC%A1%E5%AF%B9%E8%B1%A1/"/>
     <url>/2021/10/15/NewJs/Object.assign()%E6%96%B9%E6%B3%95%E4%B8%8D%E8%83%BD%E5%90%88%E5%B9%B6%E6%B7%B1%E5%B1%82%E6%AC%A1%E5%AF%B9%E8%B1%A1/</url>
