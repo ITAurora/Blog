@@ -4,7 +4,7 @@ date: 2021-10-15 10:10:10
 tags:
   - JS
 categories:
-  - JS
+  - JS问题
 index_img: ../tnt/3.jpg
 banner_img: ../tnt/3.jpg
 excerpt: 摘要
