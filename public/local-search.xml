@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>利用canvas根据文字画出图像</title>
+    <link href="/2021/12/16/Canvas/%E5%88%A9%E7%94%A8canvas%E6%A0%B9%E6%8D%AE%E6%96%87%E5%AD%97%E7%94%BB%E5%87%BA%E5%9B%BE%E5%83%8F/"/>
+    <url>/2021/12/16/Canvas/%E5%88%A9%E7%94%A8canvas%E6%A0%B9%E6%8D%AE%E6%96%87%E5%AD%97%E7%94%BB%E5%87%BA%E5%9B%BE%E5%83%8F/</url>
+    
+    <content type="html"><![CDATA[<meta name="referrer" content="no-referrer"/><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-title function_">getImg</span>(<span class="hljs-params">size, text,color</span>) &#123;<br><span class="hljs-keyword">let</span> colors = [<br><span class="hljs-string">&quot;#fd8a23&quot;</span>, <span class="hljs-string">&#x27;#128ad2&#x27;</span>,<br>];<br><span class="hljs-keyword">let</span> cvs = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&quot;canvas&quot;</span>);<br>cvs.<span class="hljs-title function_">setAttribute</span>(<span class="hljs-string">&#x27;width&#x27;</span>, size[<span class="hljs-number">0</span>]);<br>cvs.<span class="hljs-title function_">setAttribute</span>(<span class="hljs-string">&#x27;height&#x27;</span>, size[<span class="hljs-number">1</span>]);<br><span class="hljs-keyword">let</span> ctx = cvs.<span class="hljs-title function_">getContext</span>(<span class="hljs-string">&quot;2d&quot;</span>);<br>ctx.<span class="hljs-property">fillStyle</span> = colors[color];<br>ctx.<span class="hljs-title function_">fillRect</span>(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, size[<span class="hljs-number">0</span>], size[<span class="hljs-number">1</span>]);<br>ctx.<span class="hljs-property">fillStyle</span> = <span class="hljs-string">&#x27;rgb(255,255,255)&#x27;</span>;<br>ctx.<span class="hljs-property">font</span> = size[<span class="hljs-number">0</span>]*<span class="hljs-number">0.6</span>+<span class="hljs-string">&quot;px Arial&quot;</span>;<br>ctx.<span class="hljs-property">textBaseline</span> = <span class="hljs-string">&quot;middle&quot;</span>;<br>ctx.<span class="hljs-property">textAlign</span> = <span class="hljs-string">&quot;center&quot;</span>;<br>ctx.<span class="hljs-title function_">fillText</span>(text,size[<span class="hljs-number">0</span>]/<span class="hljs-number">2</span>,size[<span class="hljs-number">1</span>]/<span class="hljs-number">2</span>);<br><span class="hljs-keyword">return</span> cvs.<span class="hljs-title function_">toDataURL</span>(<span class="hljs-string">&#x27;image/jpeg&#x27;</span>, <span class="hljs-number">1</span>);<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Canvas</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Canvas</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>关于解决点击文本链接浏览器会打开的问题（让其下载，而不是打开）</title>
     <link href="/2021/11/30/NewVue2/%E5%85%B3%E4%BA%8E%E8%A7%A3%E5%86%B3%E7%82%B9%E5%87%BB%E6%96%87%E6%9C%AC%E9%93%BE%E6%8E%A5%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BC%9A%E6%89%93%E5%BC%80%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%88%E8%AE%A9%E5%85%B6%E4%B8%8B%E8%BD%BD%EF%BC%8C%E8%80%8C%E4%B8%8D%E6%98%AF%E6%89%93%E5%BC%80%EF%BC%89/"/>
     <url>/2021/11/30/NewVue2/%E5%85%B3%E4%BA%8E%E8%A7%A3%E5%86%B3%E7%82%B9%E5%87%BB%E6%96%87%E6%9C%AC%E9%93%BE%E6%8E%A5%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BC%9A%E6%89%93%E5%BC%80%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%88%E8%AE%A9%E5%85%B6%E4%B8%8B%E8%BD%BD%EF%BC%8C%E8%80%8C%E4%B8%8D%E6%98%AF%E6%89%93%E5%BC%80%EF%BC%89/</url>
