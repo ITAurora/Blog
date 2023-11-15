@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>vue中video绑定的值发生了改变页面video标签并未刷新的解决方案</title>
+    <link href="/2022/01/21/NewVue2/vue%E4%B8%ADvideo%E7%BB%91%E5%AE%9A%E7%9A%84%E5%80%BC%E5%8F%91%E7%94%9F%E4%BA%86%E6%94%B9%E5%8F%98%E9%A1%B5%E9%9D%A2video%E6%A0%87%E7%AD%BE%E5%B9%B6%E6%9C%AA%E5%88%B7%E6%96%B0%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    <url>/2022/01/21/NewVue2/vue%E4%B8%ADvideo%E7%BB%91%E5%AE%9A%E7%9A%84%E5%80%BC%E5%8F%91%E7%94%9F%E4%BA%86%E6%94%B9%E5%8F%98%E9%A1%B5%E9%9D%A2video%E6%A0%87%E7%AD%BE%E5%B9%B6%E6%9C%AA%E5%88%B7%E6%96%B0%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
+    
+    <content type="html"><![CDATA[<meta name="referrer" content="no-referrer"/><p><strong>vue中video绑定的值发生了改变我们会发现页面的video标签并未刷仍然是黑屏或者显示原来的视频，改如何解决呢？</strong><br>第一步给video标签赋个唯一标识（id，ref都行）：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js">&lt;video controls=<span class="hljs-string">&quot;controls&quot;</span> loop=<span class="hljs-string">&quot;loop&quot;</span> id=&#123;props.<span class="hljs-property">id</span>&#125; &gt;<br>                      <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&#123;props.content&#125;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;video/mp4&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">source</span>&gt;</span></span><br>                      <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&#123;props.content&#125;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;video/ogg&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">source</span>&gt;</span></span><br>                      <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">source</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&#123;props.content&#125;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;video/webm&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">source</span>&gt;</span></span><br>                      <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">object</span> <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;application/x-shockwave-flash&quot;</span> <span class="hljs-attr">data</span>=<span class="hljs-string">&quot;myvideo.swf&quot;</span>&gt;</span></span><br><span class="language-xml">                        <span class="hljs-tag">&lt;<span class="hljs-name">param</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;movie&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;myvideo.swf&quot;</span> /&gt;</span></span><br><span class="language-xml">                        <span class="hljs-tag">&lt;<span class="hljs-name">param</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;flashvars&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;autostart=true<span class="hljs-symbol">&amp;amp;</span>file=myvideo.swf&quot;</span> /&gt;</span></span><br><span class="language-xml">                      <span class="hljs-tag">&lt;/<span class="hljs-name">object</span>&gt;</span></span><br>                      当前浏览器不支持 video直接播放，点击这里下载视频： &lt;a href=<span class="hljs-string">&quot;myvideo.webm&quot;</span>&gt;下载视频&lt;/a&gt;<br>                    &lt;/video&gt;<br></code></pre></td></tr></table></figure><p>第二部采用dom的方式修改其src属性：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(message.<span class="hljs-property">id</span>).<span class="hljs-property">src</span> = res.<span class="hljs-property">data</span>.<span class="hljs-property">data</span>;<br></code></pre></td></tr></table></figure><p>这样video标签就会刷新，变为你再次赋的url的视频。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Vue2问题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>JS</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>关于cookie的获取设置和修改</title>
     <link href="/2022/01/10/NewJs/%E5%85%B3%E4%BA%8Ecookie%E7%9A%84%E8%8E%B7%E5%8F%96%E8%AE%BE%E7%BD%AE%E5%92%8C%E4%BF%AE%E6%94%B9/"/>
     <url>/2022/01/10/NewJs/%E5%85%B3%E4%BA%8Ecookie%E7%9A%84%E8%8E%B7%E5%8F%96%E8%AE%BE%E7%BD%AE%E5%92%8C%E4%BF%AE%E6%94%B9/</url>
