@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>Docker安装（centos7）</title>
+    <link href="/2022/02/18/Docker/Docker%E5%AE%89%E8%A3%85%EF%BC%88centos7%EF%BC%89/"/>
+    <url>/2022/02/18/Docker/Docker%E5%AE%89%E8%A3%85%EF%BC%88centos7%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<meta name="referrer" content="no-referrer"/><h1 id="Docker安装（centos7）"><a href="#Docker安装（centos7）" class="headerlink" title="Docker安装（centos7）"></a>Docker安装（centos7）</h1><p>安装命令:</p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">yum <span class="hljs-keyword">install</span> docker<br></code></pre></td></tr></table></figure><p>设置开机自动启动:</p><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">service docker <span class="hljs-literal">start</span><br></code></pre></td></tr></table></figure><p>查看版本:</p><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs applescript">docker <span class="hljs-built_in">version</span><br></code></pre></td></tr></table></figure><p>修改docker仓库地址:</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">vi <span class="hljs-regexp">/etc/</span>docker/daemon.json<br></code></pre></td></tr></table></figure><p>修改配置文件为：</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">&#123; “registry-mirrors”: [“https:<span class="hljs-regexp">//</span>registry.docker-cn.com”], “live-restore”: true &#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Docker</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Docker</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>vue中video绑定的值发生了改变页面video标签并未刷新的解决方案</title>
     <link href="/2022/01/21/NewVue2/vue%E4%B8%ADvideo%E7%BB%91%E5%AE%9A%E7%9A%84%E5%80%BC%E5%8F%91%E7%94%9F%E4%BA%86%E6%94%B9%E5%8F%98%E9%A1%B5%E9%9D%A2video%E6%A0%87%E7%AD%BE%E5%B9%B6%E6%9C%AA%E5%88%B7%E6%96%B0%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     <url>/2022/01/21/NewVue2/vue%E4%B8%ADvideo%E7%BB%91%E5%AE%9A%E7%9A%84%E5%80%BC%E5%8F%91%E7%94%9F%E4%BA%86%E6%94%B9%E5%8F%98%E9%A1%B5%E9%9D%A2video%E6%A0%87%E7%AD%BE%E5%B9%B6%E6%9C%AA%E5%88%B7%E6%96%B0%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
