@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>正则表达式动态全文本替换</title>
+    <link href="/2022/02/23/NewJs/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8A%A8%E6%80%81%E5%85%A8%E6%96%87%E6%9C%AC%E6%9B%BF%E6%8D%A2/"/>
+    <url>/2022/02/23/NewJs/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8A%A8%E6%80%81%E5%85%A8%E6%96%87%E6%9C%AC%E6%9B%BF%E6%8D%A2/</url>
+    
+    <content type="html"><![CDATA[<p>简单来说就是实现全文本替换，符合要求的全部替换</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//即将要被替换的字符串</span><br><span class="hljs-keyword">let</span> searchRegExp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">RegExp</span>(item.<span class="hljs-property">word</span>,<span class="hljs-string">&quot;g&quot;</span>); <br><br><span class="hljs-comment">//替换的字符串</span><br><span class="hljs-keyword">let</span> replaceWith = <span class="hljs-string">`&lt;span style=&quot;color:red;&quot; class=&#x27;wrong&#x27; id=&#x27;A<span class="hljs-subst">$&#123;item.start&#125;</span>&#x27;&gt;<span class="hljs-subst">$&#123;item.word&#125;</span>&lt;/span&gt;`</span><br><br><span class="hljs-comment">//执行替换</span><br><span class="hljs-variable language_">this</span>.<span class="hljs-property">content</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">content</span>.<span class="hljs-title function_">replace</span>(searchRegExp, replaceWith)<br></code></pre></td></tr></table></figure><p>遍历循环出要替换的字符串，达到全文替换</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>JS问题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>JS</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Docker安装（centos7）</title>
     <link href="/2022/02/18/Docker/Docker%E5%AE%89%E8%A3%85%EF%BC%88centos7%EF%BC%89/"/>
     <url>/2022/02/18/Docker/Docker%E5%AE%89%E8%A3%85%EF%BC%88centos7%EF%BC%89/</url>
