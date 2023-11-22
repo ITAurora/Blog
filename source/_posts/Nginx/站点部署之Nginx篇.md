@@ -1,12 +1,12 @@
 ---
 title: 站点部署之Nginx篇
-date: 2022-04-17 10:10:10
+date: 2022-05-15 10:10:10
 tags:
   - Nginx
 categories:
   - Nginx
-index_img: ../tnt/12.jpg
-banner_img: ../tnt/12.jpg
+index_img: ../tnt/13.jpg
+banner_img: ../tnt/13.jpg
 excerpt: 摘要
 ---
 
