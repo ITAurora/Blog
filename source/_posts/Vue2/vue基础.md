@@ -12,7 +12,7 @@ excerpt: 摘要
 <meta name="referrer" content="no-referrer"/>
 
 **vue的声明式渲染**
-html```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,7 +38,7 @@ html```
 ```
 **vue基础介绍**
 
-html```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
