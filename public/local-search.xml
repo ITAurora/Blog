@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>js中在onload回调事件需要用return的返回值</title>
+    <link href="/2022/12/13/NewJs/js%E4%B8%AD%E5%9C%A8onload%E5%9B%9E%E8%B0%83%E4%BA%8B%E4%BB%B6%E9%9C%80%E8%A6%81%E7%94%A8return%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC/"/>
+    <url>/2022/12/13/NewJs/js%E4%B8%AD%E5%9C%A8onload%E5%9B%9E%E8%B0%83%E4%BA%8B%E4%BB%B6%E9%9C%80%E8%A6%81%E7%94%A8return%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC/</url>
+    
+    <content type="html"><![CDATA[<p>按照平常理论上这样写一点问题也没问题<br>但是返回的是undefined<br>说明onload要等待x资源都加再完成了才能执行</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-title function_">getFileSize</span>(<span class="hljs-params">url</span>) &#123;<br>      <span class="hljs-keyword">var</span> x = <span class="hljs-keyword">new</span> <span class="hljs-title class_">XMLHttpRequest</span>();<br>       x.<span class="hljs-title function_">open</span>(<span class="hljs-string">&quot;GET&quot;</span>, url, <span class="hljs-literal">true</span>);<br>       x.<span class="hljs-property">responseType</span> = <span class="hljs-string">&#x27;blob&#x27;</span>;<br>       <span class="hljs-keyword">var</span> fileSize=<span class="hljs-number">0</span><br>       x.<span class="hljs-property">onload</span> = <span class="hljs-function">() =&gt;</span> &#123;<br>      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(x.<span class="hljs-property">response</span>.<span class="hljs-property">size</span>)<br>      fileSize=x.<span class="hljs-property">response</span>.<span class="hljs-property">size</span><br>      &#125;<br>      x.<span class="hljs-title function_">send</span>();<br>      <span class="hljs-keyword">return</span> fileSize<br>&#125;<br></code></pre></td></tr></table></figure><p>改进 利用promise的回调</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-title function_">getFileSize</span>(<span class="hljs-params">url</span>) &#123;<br>      <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params">a, b</span>) &#123;<br>        <span class="hljs-keyword">var</span> x = <span class="hljs-keyword">new</span> <span class="hljs-title class_">XMLHttpRequest</span>();<br>        x.<span class="hljs-title function_">open</span>(<span class="hljs-string">&quot;GET&quot;</span>, url, <span class="hljs-literal">true</span>);<br>        x.<span class="hljs-property">responseType</span> = <span class="hljs-string">&#x27;blob&#x27;</span>;<br>        x.<span class="hljs-property">onload</span> = <span class="hljs-function">() =&gt;</span> &#123;<br>          <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(x.<span class="hljs-property">response</span>.<span class="hljs-property">size</span>)<br>          <span class="hljs-title function_">a</span>(x)<br>        &#125;<br>        x.<span class="hljs-title function_">send</span>();<br>      &#125;)<br>    &#125;<br></code></pre></td></tr></table></figure><p>后续所有操作都在这回调里面执行</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-title function_">getFileSize</span>(url).<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">res</span>)=&gt;</span>&#123;<br>“你要操作”<br>&#125;)<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>JS问题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>JS</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>深度冻结对象</title>
     <link href="/2022/10/10/NewJs/%E6%B7%B1%E5%BA%A6%E5%86%BB%E7%BB%93%E5%AF%B9%E8%B1%A1/"/>
     <url>/2022/10/10/NewJs/%E6%B7%B1%E5%BA%A6%E5%86%BB%E7%BB%93%E5%AF%B9%E8%B1%A1/</url>
