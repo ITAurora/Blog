@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>文件上传web端和uinapp之间的相互转化</title>
+    <link href="/2023/01/11/Uniapp/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0web%E7%AB%AF%E5%92%8Cuinapp%E4%B9%8B%E9%97%B4%E7%9A%84%E7%9B%B8%E4%BA%92%E8%BD%AC%E5%8C%96/"/>
+    <url>/2023/01/11/Uniapp/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0web%E7%AB%AF%E5%92%8Cuinapp%E4%B9%8B%E9%97%B4%E7%9A%84%E7%9B%B8%E4%BA%92%E8%BD%AC%E5%8C%96/</url>
+    
+    <content type="html"><![CDATA[<h2 id="web端"><a href="#web端" class="headerlink" title="web端"></a>web端</h2><p>web端文件上传最原始的方法，就是创建FormData对象，在创建的对象里添加属性以及要上传的文件，可以直接使用axios进行上传，上传到后端的minio集群里（个例）。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> fileData = <span class="hljs-keyword">new</span> <span class="hljs-title class_">FormData</span>();<br>fileData.<span class="hljs-title function_">append</span>(<span class="hljs-string">&#x27;file&#x27;</span>, file);<br>fileData.<span class="hljs-title function_">append</span>(<span class="hljs-string">&#x27;path&#x27;</span>, <span class="hljs-string">&#x27;/private/&#x27;</span> + msgId + <span class="hljs-string">&#x27;/&#x27;</span> + timestamp);<br>axios.<span class="hljs-title function_">post</span>(url, fileData).<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> &#123;<br><span class="hljs-comment">//上传成功后你要执行的操作</span><br>&#125;).<span class="hljs-title function_">catch</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) &#123;<br><span class="hljs-comment">//上传失败进行的操作</span><br><span class="hljs-comment">//比如你所上传的minio集群所分配的存储空间满了</span><br>&#125;);<br></code></pre></td></tr></table></figure><h2 id="uni-app"><a href="#uni-app" class="headerlink" title="uni-app"></a>uni-app</h2><p>我们知道，uniapp和vue很像，像但又不完全像，再uniapp里官方提供的有单独上传文件的api，uni.uploadFile用来上传uniapp的各种文件，不过也能使用axios，想使用axios的话需要基于uni.request再进行封装。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs js">uni.<span class="hljs-title function_">uploadFile</span>(&#123;<br><span class="hljs-attr">url</span>:url,<br><span class="hljs-attr">file</span>:file, <span class="hljs-comment">// filePathfile和filefilePath二选一，file放文件流，filefilePath放文件路径</span><br><span class="hljs-comment">// name:file.name, // 在FormData 中文件对应的属性名，这个如果你要加path，就不要添加name字段了</span><br><span class="hljs-attr">formData</span>: &#123;<br><span class="hljs-attr">path</span>:<span class="hljs-string">&#x27;/group/&#x27;</span> + msgId + <span class="hljs-string">&#x27;/&#x27;</span> + timestamp<span class="hljs-comment">//用来添加除上述字段以外的字段</span><br>&#125;,<br><span class="hljs-attr">header</span>: &#123;<br><span class="hljs-attr">token</span>:token<br>&#125;,<br>  <span class="hljs-attr">success</span>: <span class="hljs-function">(<span class="hljs-params">uploadFileRes</span>) =&gt;</span> &#123;<br>  <span class="hljs-comment">//上传成功后的回调</span><br>  &#125;<br>  <span class="hljs-attr">fail</span>:<span class="hljs-function">(<span class="hljs-params">err</span>)=&gt;</span>&#123;<br>  <span class="hljs-comment">//上传失败执行的操作</span><br>  &#125;<br>  &#125;);<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>uni-app</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>uni-app</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>js中在onload回调事件需要用return的返回值</title>
     <link href="/2022/12/13/NewJs/js%E4%B8%AD%E5%9C%A8onload%E5%9B%9E%E8%B0%83%E4%BA%8B%E4%BB%B6%E9%9C%80%E8%A6%81%E7%94%A8return%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC/"/>
     <url>/2022/12/13/NewJs/js%E4%B8%AD%E5%9C%A8onload%E5%9B%9E%E8%B0%83%E4%BA%8B%E4%BB%B6%E9%9C%80%E8%A6%81%E7%94%A8return%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC/</url>
