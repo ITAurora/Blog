@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>ajax的post请求数据为json格式相关设置</title>
+    <link href="/2023/02/09/NewJs/ajax%E7%9A%84post%E8%AF%B7%E6%B1%82%E6%95%B0%E6%8D%AE%E4%B8%BAjson%E6%A0%BC%E5%BC%8F%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/"/>
+    <url>/2023/02/09/NewJs/ajax%E7%9A%84post%E8%AF%B7%E6%B1%82%E6%95%B0%E6%8D%AE%E4%B8%BAjson%E6%A0%BC%E5%BC%8F%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/</url>
+    
+    <content type="html"><![CDATA[<p>平时用request封装axios习惯了突然用ajax传参时一直出问题，原来是配置设置错了</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs js">$.<span class="hljs-title function_">ajax</span>(&#123;<br>        <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;post&quot;</span>,<br>        <span class="hljs-attr">contentType</span>: <span class="hljs-string">&quot;application/json&quot;</span>,<span class="hljs-comment">//必须项</span><br>        <span class="hljs-attr">dataType</span>: <span class="hljs-string">&quot;json&quot;</span>,<span class="hljs-comment">//必须项</span><br>        <span class="hljs-attr">data</span>: <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>(&#123;<br>            <span class="hljs-attr">data</span>: <span class="hljs-string">&quot;world&quot;</span>,<br>            <span class="hljs-attr">p</span>: &#123;<br>                <span class="hljs-attr">pag</span>: <span class="hljs-number">0</span>,<br>                <span class="hljs-attr">pageSize</span>: <span class="hljs-number">0</span>,<br>                <span class="hljs-attr">total</span>: <span class="hljs-number">0</span><br>            &#125;,<br>            <span class="hljs-attr">token</span>: <span class="hljs-string">&quot;string&quot;</span><br>        &#125;),<br>        <span class="hljs-comment">// async: true,</span><br>        <span class="hljs-attr">url</span>: <span class="hljs-string">&quot; http://61.155.137.231:9006/beClass/classList&quot;</span>,<br>        <span class="hljs-attr">success</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params">res</span>) &#123;<br>            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(res);<br>        &#125;,<br>        <span class="hljs-attr">error</span>: <span class="hljs-keyword">function</span> (<span class="hljs-params">err</span>) &#123;<br>            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;请求失败&quot;</span>, err.<span class="hljs-property">statusText</span>);<br>        &#125;<br>    &#125;);<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>JS问题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>ajax</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>文件上传web端和uinapp之间的相互转化</title>
     <link href="/2023/01/11/Uniapp/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0web%E7%AB%AF%E5%92%8Cuinapp%E4%B9%8B%E9%97%B4%E7%9A%84%E7%9B%B8%E4%BA%92%E8%BD%AC%E5%8C%96/"/>
     <url>/2023/01/11/Uniapp/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0web%E7%AB%AF%E5%92%8Cuinapp%E4%B9%8B%E9%97%B4%E7%9A%84%E7%9B%B8%E4%BA%92%E8%BD%AC%E5%8C%96/</url>
