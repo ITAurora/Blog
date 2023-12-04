@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>Navicat连不上MySQL数据库</title>
+    <link href="/2023/05/25/MySql/Navicat%E8%BF%9E%E4%B8%8D%E4%B8%8AMySQL%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <url>/2023/05/25/MySql/Navicat%E8%BF%9E%E4%B8%8D%E4%B8%8AMySQL%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
+    
+    <content type="html"><![CDATA[<p>当用户名密码都正确sql上能进去数据库<br>我们使用navicat连接mysql数据库时会报密码错误<br>像这种<br><img src="/../../Vue2Img/mysql.png" alt="Alt text"><br>查了一下说是因为MySQL8.0和之前版本的密码加密方式不一样<br> 8.0版本之前的mysql加密规则是mysql_native_pssword，8.0版本之后是caching_sha2_password【强加密规则】，但是现在navicat还不支持最新的加密规则<br> 修改加密规则:</p><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">mysql&gt; use mysql;<br>mysql&gt; <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">USER</span> <span class="hljs-string">&#x27;root&#x27;</span>@<span class="hljs-string">&#x27;%&#x27;</span> IDENTIFIED <span class="hljs-keyword">BY</span> <span class="hljs-string">&#x27;root&#x27;</span> <span class="hljs-keyword">PASSWORD</span> EXPIRE NEVER;    //修改root用户的加密规则<br>mysql&gt; <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">USER</span> <span class="hljs-string">&#x27;root&#x27;</span>@<span class="hljs-string">&#x27;%&#x27;</span> IDENTIFIED <span class="hljs-keyword">WITH</span> mysql_native_password <span class="hljs-keyword">BY</span> <span class="hljs-string">&#x27;root&#x27;</span>; //修改root用户的密码为root<br>mysql&gt; flush <span class="hljs-keyword">privileges</span>;     //刷新权限<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Mysql</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Navicat</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>ajax的post请求数据为json格式相关设置</title>
     <link href="/2023/02/09/NewJs/ajax%E7%9A%84post%E8%AF%B7%E6%B1%82%E6%95%B0%E6%8D%AE%E4%B8%BAjson%E6%A0%BC%E5%BC%8F%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/"/>
     <url>/2023/02/09/NewJs/ajax%E7%9A%84post%E8%AF%B7%E6%B1%82%E6%95%B0%E6%8D%AE%E4%B8%BAjson%E6%A0%BC%E5%BC%8F%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/</url>

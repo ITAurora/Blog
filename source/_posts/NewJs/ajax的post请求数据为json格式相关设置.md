@@ -5,7 +5,7 @@ tags:
   - ajax
 categories:
   - JS问题
-index_img: ../tnt/8.jpg
+index_img: ../tnt/18.jpg
 banner_img: ../tnt/18.jpg
 excerpt: 摘要
 ---
