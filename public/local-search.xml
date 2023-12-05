@@ -4,9 +4,34 @@
   
   
   <entry>
+    <title>使用provide和inject时初始化有效但监不听到provide导出的值的变化</title>
+    <link href="/2023/05/25/NewVue3/%E4%BD%BF%E7%94%A8provide%E5%92%8Cinject%E6%97%B6%E5%88%9D%E5%A7%8B%E5%8C%96%E6%9C%89%E6%95%88%E4%BD%86%E7%9B%91%E4%B8%8D%E5%90%AC%E5%88%B0provide%E5%AF%BC%E5%87%BA%E7%9A%84%E5%80%BC%E7%9A%84%E5%8F%98%E5%8C%96/"/>
+    <url>/2023/05/25/NewVue3/%E4%BD%BF%E7%94%A8provide%E5%92%8Cinject%E6%97%B6%E5%88%9D%E5%A7%8B%E5%8C%96%E6%9C%89%E6%95%88%E4%BD%86%E7%9B%91%E4%B8%8D%E5%90%AC%E5%88%B0provide%E5%AF%BC%E5%87%BA%E7%9A%84%E5%80%BC%E7%9A%84%E5%8F%98%E5%8C%96/</url>
+    
+    <content type="html"><![CDATA[<p>这个问题是我自身的沙雕问题，仅供参考。<br>vue2里肯定不会遇到我这种问题，因为他对data数据源全部进行了响应式绑定<br>但vue3里的响应式绑定要自己用shallowReactive和reactive进行手动绑定<br>导致我们有时候会传shallowReactive和reactive内部的值<br>此时provide和inject是监听不到你的值的（太悲惨了）<br>错误示例：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// A.vue</span><br><span class="hljs-title function_">setup</span>(<span class="hljs-params"></span>) &#123;<br> <span class="hljs-keyword">const</span> info = <span class="hljs-title function_">reactive</span>(&#123;<br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Tony&#x27;</span>,<br>    <span class="hljs-attr">age</span>: <span class="hljs-number">99</span><br>  &#125;)<br>  <span class="hljs-title function_">provide</span>(<span class="hljs-string">&#x27;name&#x27;</span>, info.<span class="hljs-property">name</span>) <span class="hljs-comment">// 导出</span><br> &#125;<br><span class="hljs-comment">// C.vue</span><br><span class="hljs-title function_">setup</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">const</span> info = <span class="hljs-title function_">inject</span>(<span class="hljs-string">&#x27;name&#x27;</span>) <span class="hljs-comment">// 导入</span><br>&#125;<br></code></pre></td></tr></table></figure><p>正确示例</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// A.vue</span><br><span class="hljs-title function_">setup</span>(<span class="hljs-params"></span>) &#123;<br> <span class="hljs-keyword">const</span> info = <span class="hljs-title function_">reactive</span>(&#123;<br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;Tony&#x27;</span>,<br>    <span class="hljs-attr">age</span>: <span class="hljs-number">99</span><br>  &#125;)<br>  <span class="hljs-title function_">provide</span>(<span class="hljs-string">&#x27;userInfo&#x27;</span>, info) <span class="hljs-comment">// 导出</span><br> &#125;<br><span class="hljs-comment">// C.vue</span><br><span class="hljs-title function_">setup</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">const</span> info = <span class="hljs-title function_">inject</span>(<span class="hljs-string">&#x27;userInfo&#x27;</span>) <span class="hljs-comment">// 导入</span><br>  <span class="hljs-keyword">const</span> name=userInfo.<span class="hljs-property">name</span><br>&#125;<br>对 你没看错 想要拿name就要把他的shallowReactive和reactive包裹的最外层进行导出<br>因为这样才有响应式<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Vue3问题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Js</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Navicat连不上MySQL数据库</title>
-    <link href="/2023/05/25/MySql/Navicat%E8%BF%9E%E4%B8%8D%E4%B8%8AMySQL%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    <url>/2023/05/25/MySql/Navicat%E8%BF%9E%E4%B8%8D%E4%B8%8AMySQL%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
+    <link href="/2023/03/13/MySql/Navicat%E8%BF%9E%E4%B8%8D%E4%B8%8AMySQL%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <url>/2023/03/13/MySql/Navicat%E8%BF%9E%E4%B8%8D%E4%B8%8AMySQL%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
     
     <content type="html"><![CDATA[<p>当用户名密码都正确sql上能进去数据库<br>我们使用navicat连接mysql数据库时会报密码错误<br>像这种<br><img src="/../../Vue2Img/mysql.png" alt="Alt text"><br>查了一下说是因为MySQL8.0和之前版本的密码加密方式不一样<br> 8.0版本之前的mysql加密规则是mysql_native_pssword，8.0版本之后是caching_sha2_password【强加密规则】，但是现在navicat还不支持最新的加密规则<br> 修改加密规则:</p><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">mysql&gt; use mysql;<br>mysql&gt; <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">USER</span> <span class="hljs-string">&#x27;root&#x27;</span>@<span class="hljs-string">&#x27;%&#x27;</span> IDENTIFIED <span class="hljs-keyword">BY</span> <span class="hljs-string">&#x27;root&#x27;</span> <span class="hljs-keyword">PASSWORD</span> EXPIRE NEVER;    //修改root用户的加密规则<br>mysql&gt; <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">USER</span> <span class="hljs-string">&#x27;root&#x27;</span>@<span class="hljs-string">&#x27;%&#x27;</span> IDENTIFIED <span class="hljs-keyword">WITH</span> mysql_native_password <span class="hljs-keyword">BY</span> <span class="hljs-string">&#x27;root&#x27;</span>; //修改root用户的密码为root<br>mysql&gt; flush <span class="hljs-keyword">privileges</span>;     //刷新权限<br></code></pre></td></tr></table></figure>]]></content>
     
