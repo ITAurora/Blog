@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>vue3中开启了keepAlive但是页面仍然会刷新走生命周期的解决方案</title>
+    <link href="/2023/10/10/NewVue3/vue3%E4%B8%AD%E5%BC%80%E5%90%AF%E4%BA%86keepAlive%E4%BD%86%E6%98%AF%E9%A1%B5%E9%9D%A2%E4%BB%8D%E7%84%B6%E4%BC%9A%E5%88%B7%E6%96%B0%E8%B5%B0%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    <url>/2023/10/10/NewVue3/vue3%E4%B8%AD%E5%BC%80%E5%90%AF%E4%BA%86keepAlive%E4%BD%86%E6%98%AF%E9%A1%B5%E9%9D%A2%E4%BB%8D%E7%84%B6%E4%BC%9A%E5%88%B7%E6%96%B0%E8%B5%B0%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
+    
+    <content type="html"><![CDATA[<p>我们知道vue3里我们不需要写name和components等等,脚手架会以文件名为组件名来让我们导入并使用,然后我遇到一个很小的问题,就是我开启了keepAlive 如下:</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs javascript">&#123;<br>   <span class="hljs-attr">path</span>: <span class="hljs-string">&quot;styleProcess&quot;</span>,<br>   <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;styleProcess&quot;</span>,<br>   <span class="hljs-attr">component</span>: <span class="hljs-function"><span class="hljs-params">resolve</span> =&gt;</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&quot;@/views&quot;</span>),<br>   <span class="hljs-attr">meta</span>: &#123;<br>       <span class="hljs-attr">keepAlive</span>: <span class="hljs-literal">true</span><br>   &#125;<br> &#125;<br></code></pre></td></tr></table></figure><p>但是呢我在这个页面操作后像select的选中,抽屉的打开 ,dialog的打开等操作后,进入其他页面后再返回到刚才操作的页面,上面哪些举例都会重置,不会保留之前的操作.正常情况下开启了keepAlive是会保存的vue2是没问题的,vue3会遇到这个问题,这个时候我们就需要加name字段了,如下:</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript">&lt;script&gt;<br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;&quot;</span>,<br>&#125;;<br>&lt;/script&gt;<br></code></pre></td></tr></table></figure><p>就可以完成页面缓存了</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Vue3问题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Js</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>vue2中使用vuex全面解析</title>
     <link href="/2023/09/01/Vue2/vue2%E4%B8%AD%E4%BD%BF%E7%94%A8vuex%E5%85%A8%E9%9D%A2%E8%A7%A3%E6%9E%90/"/>
     <url>/2023/09/01/Vue2/vue2%E4%B8%AD%E4%BD%BF%E7%94%A8vuex%E5%85%A8%E9%9D%A2%E8%A7%A3%E6%9E%90/</url>
